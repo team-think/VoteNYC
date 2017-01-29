@@ -32,6 +32,7 @@
         android:src="@drawable/locationpin"
         android:layout_above="@+id/tv_polling_place"
         android:layout_alignStart="@+id/tv_polling_place"
+        android:layout_alignLeft="@id/tv_polling_place"
         android:layout_marginBottom="18dp" />
 
     <TextView
@@ -43,7 +44,9 @@
         android:text="@string/poll_place"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_marginStart="13dp"
+        android:layout_marginLeft="13dp"
         android:layout_marginBottom="31dp"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"/>
@@ -55,7 +58,8 @@
         android:src="@drawable/votenyc"
         android:layout_marginBottom="59dp"
         android:layout_above="@+id/et_address"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"/>
 
     <ImageView
         android:id="@+id/iv_ballot"
@@ -63,8 +67,10 @@
         android:layout_height="wrap_content"
         android:src="@drawable/ballot"
         android:layout_marginEnd="21dp"
+        android:layout_marginRight="21dp"
         android:layout_alignBottom="@+id/iv_location_pin"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"/>
 
 
 </RelativeLayout>
