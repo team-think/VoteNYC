@@ -15,7 +15,6 @@ import android.widget.ImageView;
 public class MainFragment extends Fragment {
 
     private static final String TAG = MainFragment.class.getSimpleName();
-    private ImageView voteBanner;
     private View mRoot;
 
 

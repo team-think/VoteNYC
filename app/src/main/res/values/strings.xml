@@ -4,4 +4,10 @@
     <string name="poll_place">Polling Sites</string>
     <string name="elected_officials">Your Elected Officials</string>
     <string name="next_election">Next Election</string>
+    <string name="country">Country</string>
+    <string name="state">State</string>
+    <string name="city">City</string>
+    <string name="borough">Borough</string>
+    <string name="local">Local</string>
+    <string name="google_maps_api_key">AIzaSyCAxTPtkzrhpQcwJpJSdvCWle9Y4NuLsWw</string>
 </resources>
