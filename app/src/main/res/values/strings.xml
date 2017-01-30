@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">BigAppsVoteOrDie</string>
     <string name="enter_location">Enter your location to find:</string>
-    <string name="poll_place">Polling Sites</string>
+    <string name="poll_place">Poll Sites</string>
     <string name="elected_officials">Your Elected Officials</string>
     <string name="next_election">Next Election</string>
     <string name="country">Country</string>

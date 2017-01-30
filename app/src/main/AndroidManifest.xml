@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.android.bigappsvotenyc">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -15,6 +17,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
 
         <meta-data
             android:name="com.google.android.gms.version"
@@ -24,6 +27,9 @@
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="@string/google_maps_api_key" />
 
+=======
+        <activity android:name=".ElectedRepresentatives.ElectedReps"/>
+>>>>>>> 2c269e089af17b12433d6e33a49e7299ed916668
     </application>
 
 </manifest>
