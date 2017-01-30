@@ -20,6 +20,7 @@ public class RepViewHolder extends RecyclerView.ViewHolder {
     private TextView tv_party;
     private TextView tv_address;
     private TextView tv_phone;
+    private TextView tv_officePosition;
 
 
     public RepViewHolder(View itemView) {
@@ -27,12 +28,19 @@ public class RepViewHolder extends RecyclerView.ViewHolder {
 
         tv_repName = (TextView) itemView.findViewById(R.id.tv_rep_name);
         tv_party = (TextView) itemView.findViewById(R.id.tv_rep_party);
+//        tv_address = (TextView) itemView.findViewById(R.id.tv_rep_address);
+//        tv_phone = (TextView) itemView.findViewById(R.id.tv_rep_phones);
+//        tv_officePosition = (TextView) itemView.findViewById(R.id.tv_office_position);
     }
 
 
     public void bind(Official official) {
-        tv_repName.setText(official.getName());
-        tv_party.setText(official.getParty());
+        tv_repName.setText("Representative: " + official.getName());
+        tv_party.setText("Polical Party: " + official.getParty());
 
+    }
+
+    public void bind(Office office) {
+        tv_officePosition.setText("Position: " + office.getName());
     }
 }

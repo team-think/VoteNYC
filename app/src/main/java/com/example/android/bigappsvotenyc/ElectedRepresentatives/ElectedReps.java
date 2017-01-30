@@ -7,13 +7,10 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
-import com.example.android.bigappsvotenyc.ElectedRepresentatives.controller.RepAdapter;
-import com.example.android.bigappsvotenyc.ElectedRepresentatives.model.Official;
+import com.example.android.bigappsvotenyc.ElectedRepresentatives.controller.RepOfficialAdapter;
 import com.example.android.bigappsvotenyc.ElectedRepresentatives.model.RepResponse;
 import com.example.android.bigappsvotenyc.ElectedRepresentatives.service.RepService;
 import com.example.android.bigappsvotenyc.R;
-
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -30,6 +27,7 @@ public class ElectedReps extends AppCompatActivity {
     private static final String TAG = ElectedReps.class.getSimpleName();
     private static final String BASE_URL = "https://www.googleapis.com/civicinfo/v2/";
     private RecyclerView recyclerView;
+    private RepOfficialAdapter officialAdapter;
     private RepService service;
 
 
@@ -41,7 +39,6 @@ public class ElectedReps extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         connectToServer();
     }
-
 
     private void connectToServer() {
         Retrofit retrofit = new Retrofit.Builder()
@@ -57,11 +54,10 @@ public class ElectedReps extends AppCompatActivity {
 
             @Override
             public void onResponse(Call<RepResponse> call, Response<RepResponse> response) {
-                RepResponse repResponse = response.body();
-                List<Official> officials = repResponse.getOfficials();
+                officialAdapter = new RepOfficialAdapter(response.body());
                 Log.d(TAG, "Response: " + response.body());
                 Log.d(TAG, "Size: " + response.body().getOfficials());
-                recyclerView.setAdapter(new RepAdapter(officials));
+                recyclerView.setAdapter(officialAdapter);
             }
 
             @Override
@@ -70,7 +66,6 @@ public class ElectedReps extends AppCompatActivity {
 
             }
         });
-
 
     }
 
