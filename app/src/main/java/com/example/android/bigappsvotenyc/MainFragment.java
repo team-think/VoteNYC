@@ -19,9 +19,9 @@ import com.example.android.bigappsvotenyc.PollingLocations.Locations;
 public class MainFragment extends Fragment {
 
     private static final String TAG = MainFragment.class.getSimpleName();
-    private ImageView getReps;
+    private ImageView getOfficials;
     private ImageView getElections;
-    private ImageView pollLocations;
+    private ImageView getLocations;
     private View mRoot;
 
 
@@ -41,8 +41,8 @@ public class MainFragment extends Fragment {
     }
 
     private void clickPollButton(){
-        pollLocation = (ImageView) mRoot.findViewById(R.id.iv_location_pin);
-        pollLocation.setOnClickListener(new View.OnClickListener() {
+        getLocations = (ImageView) mRoot.findViewById(R.id.iv_location_pin);
+        getLocations.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 gotoPollLocations();
@@ -56,8 +56,8 @@ public class MainFragment extends Fragment {
     }
 
     private void clickRepButton() {
-        getReps = (ImageView) mRoot.findViewById(R.id.iv_vote);
-        getReps.setOnClickListener(new View.OnClickListener() {
+        getOfficials = (ImageView) mRoot.findViewById(R.id.iv_officials);
+        getOfficials.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 representativesByInfo();
