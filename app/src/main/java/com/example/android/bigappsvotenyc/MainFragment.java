@@ -7,9 +7,11 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import com.example.android.bigappsvotenyc.PollingLocations.Locations;
+import com.example.android.bigappsvotenyc.ElectedRepresentatives.ElectedReps;
 
 /**
  * Created by catwong on 1/29/17.
@@ -18,7 +20,9 @@ import com.example.android.bigappsvotenyc.PollingLocations.Locations;
 public class MainFragment extends Fragment {
 
     private static final String TAG = MainFragment.class.getSimpleName();
-    private ImageView voteBanner, pollLocation;
+    private ImageView getReps;
+    private ImageView getElections;
+    private ImageView pollLocations;
     private View mRoot;
 
 
@@ -33,11 +37,11 @@ public class MainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup parent, @Nullable Bundle savedInstanceState) {
         mRoot = inflater.inflate(R.layout.fragment_main, parent, false);
         clickPollButton();
+        clickRepButton();
         return mRoot;
     }
 
     private void clickPollButton(){
-
         pollLocation = (ImageView) mRoot.findViewById(R.id.iv_location_pin);
         pollLocation.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,15 +49,26 @@ public class MainFragment extends Fragment {
                 gotoPollLocations();
             }
         });
-
-
     }
 
     private void gotoPollLocations() {
-
         Intent intent = new Intent(getActivity(), Locations.class);
         MainFragment.this.startActivity(intent);
-
-
     }
+
+    private void clickRepButton() {
+        getReps = (ImageView) mRoot.findViewById(R.id.iv_vote);
+        getReps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                representativesByInfo();
+            }
+        });
+    }
+
+    private void representativesByInfo() {
+        Intent intent = new Intent(getActivity(), ElectedReps.class);
+        MainFragment.this.startActivity(intent);
+    }
+
 }
