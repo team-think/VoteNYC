@@ -1,4 +1,4 @@
-package com.example.android.bigappsvotenyc.ElectedRepresentatives.model;
+package com.example.android.bigappsvotenyc.ElectedOfficials.model;
 
 import java.util.List;
 

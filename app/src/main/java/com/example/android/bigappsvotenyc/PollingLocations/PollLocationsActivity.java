@@ -7,9 +7,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
-import com.example.android.bigappsvotenyc.Internet.VoterInfoService;
-import com.example.android.bigappsvotenyc.Model.VoterInfo;
-import com.example.android.bigappsvotenyc.PollAdapter;
+import com.example.android.bigappsvotenyc.PollingLocations.Internet.VoterInfoService;
+import com.example.android.bigappsvotenyc.PollingLocations.Model.VoterInfo;
 import com.example.android.bigappsvotenyc.R;
 
 import java.util.List;
@@ -24,9 +23,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by mathcore on 1/30/17.
  */
 
-public class Locations extends AppCompatActivity {
+public class PollLocationsActivity extends AppCompatActivity {
 
-    private static final String TAG = Locations.class.getSimpleName();
+    private static final String TAG = PollLocationsActivity.class.getSimpleName();
     private String key = "AIzaSyA1G4Wrf-G7pz3l-eXh6T6WPOoshE6aQQA";
     private RecyclerView recyclerView;
     private PollAdapter adapter;

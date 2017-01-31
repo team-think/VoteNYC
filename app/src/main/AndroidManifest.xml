@@ -17,8 +17,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ElectedRepresentatives.ElectedRepsActivity"/>
-        <activity android:name=".PollingLocations.Locations" />
+        <activity android:name=".ElectedOfficials.ElectedOfficialsActivity"/>
+        <activity android:name=".PollingLocations.PollLocationsActivity" />
 
         <meta-data
             android:name="com.google.android.gms.version"

@@ -1,6 +1,6 @@
-package com.example.android.bigappsvotenyc.Internet;
+package com.example.android.bigappsvotenyc.PollingLocations.Internet;
 
-import com.example.android.bigappsvotenyc.Model.VoterInfo;
+import com.example.android.bigappsvotenyc.PollingLocations.Model.VoterInfo;
 
 import java.util.List;
 

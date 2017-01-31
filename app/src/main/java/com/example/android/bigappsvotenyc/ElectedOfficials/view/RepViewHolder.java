@@ -1,17 +1,12 @@
-package com.example.android.bigappsvotenyc.ElectedRepresentatives.view;
+package com.example.android.bigappsvotenyc.ElectedOfficials.view;
 
-import android.content.ClipData;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.android.bigappsvotenyc.ElectedRepresentatives.model.Office;
-import com.example.android.bigappsvotenyc.ElectedRepresentatives.model.Official;
+import com.example.android.bigappsvotenyc.ElectedOfficials.model.Office;
+import com.example.android.bigappsvotenyc.ElectedOfficials.model.Official;
 import com.example.android.bigappsvotenyc.R;
-
-import org.w3c.dom.Text;
-
-import java.util.List;
 
 /**
  * Created by catwong on 1/29/17.

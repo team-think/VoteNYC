@@ -1,11 +1,12 @@
-package com.example.android.bigappsvotenyc;
+package com.example.android.bigappsvotenyc.PollingLocations;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.android.bigappsvotenyc.Model.Election;
-import com.example.android.bigappsvotenyc.Model.PollingLocation;
+import com.example.android.bigappsvotenyc.PollingLocations.Model.Election;
+import com.example.android.bigappsvotenyc.PollingLocations.Model.PollingLocation;
+import com.example.android.bigappsvotenyc.R;
 
 /**
  * Created by mathcore on 1/30/17.
