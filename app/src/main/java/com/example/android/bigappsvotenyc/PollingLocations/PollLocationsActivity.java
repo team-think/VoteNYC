@@ -43,26 +43,24 @@ public class PollLocationsActivity extends AppCompatActivity {
 
     public void downloadData(){
 
-
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://www.googleapis.com/civicinfo/v2/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-
         VoterInfoService service = retrofit.create(VoterInfoService.class);
 
-        Call<List<VoterInfo>> call = service.getData("682 Seneca Ave Queens NY 11385", "2000", key);
+        Call<VoterInfo> call = service.getData("682 Seneca Ave Queens NY 11385", "2000", key);
 
-        call.enqueue(new Callback<List<VoterInfo>>() {
+        call.enqueue(new Callback<VoterInfo>() {
             @Override
-            public void onResponse(Call<List<VoterInfo>> call, Response<List<VoterInfo>> response) {
+            public void onResponse(Call<VoterInfo> call, Response<VoterInfo> response) {
                 adapter = new PollAdapter((VoterInfo) response.body());
                 recyclerView.setAdapter(adapter);
             }
 
             @Override
-            public void onFailure(Call<List<VoterInfo>> call, Throwable t) {
+            public void onFailure(Call<VoterInfo> call, Throwable t) {
 
                 Log.d(TAG, "Error: " + t.getMessage());
 

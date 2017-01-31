@@ -24,7 +24,6 @@ public class PollViewHolder extends RecyclerView.ViewHolder {
     private TextView pollHours;
 
 
-
     public PollViewHolder(View itemView) {
         super(itemView);
 
@@ -40,7 +39,6 @@ public class PollViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void bind(PollingLocation pollingLocation) {
-
         pollName.setText("Name: " + pollingLocation.getAddress().getLocationName());
         pollAddressLine1.setText("Address: " + pollingLocation.getAddress().getLine1());
         pollCity.setText("City: " + pollingLocation.getAddress().getCity());
@@ -49,15 +47,9 @@ public class PollViewHolder extends RecyclerView.ViewHolder {
         pollNotes.setText("Notes:" + pollingLocation.getNotes());
         pollHours.setText("Hours: " + pollingLocation.getPollingHours());
 
-
-
-
-
-
     }
 
-    public void bind(Election election){
-
+    public void bind(Election election) {
         electionDay.setText("Next Election: " + election.getElectionDay());
     }
 }
