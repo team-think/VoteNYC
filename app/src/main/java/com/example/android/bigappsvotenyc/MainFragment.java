@@ -10,8 +10,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.example.android.bigappsvotenyc.PollingLocations.Locations;
 import com.example.android.bigappsvotenyc.ElectedRepresentatives.ElectedReps;
-
 
 /**
  * Created by catwong on 1/29/17.
@@ -20,27 +20,40 @@ import com.example.android.bigappsvotenyc.ElectedRepresentatives.ElectedReps;
 public class MainFragment extends Fragment {
 
     private static final String TAG = MainFragment.class.getSimpleName();
-<<<<<<< HEAD
-=======
     private ImageView getReps;
     private ImageView getElections;
-    private ImageView getPolls;
->>>>>>> 2c269e089af17b12433d6e33a49e7299ed916668
+    private ImageView pollLocations;
     private View mRoot;
 
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup parent, @Nullable Bundle savedInstanceState) {
         mRoot = inflater.inflate(R.layout.fragment_main, parent, false);
+        clickPollButton();
         clickRepButton();
-        representativesByInfo();
         return mRoot;
+    }
+
+    private void clickPollButton(){
+        pollLocation = (ImageView) mRoot.findViewById(R.id.iv_location_pin);
+        pollLocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoPollLocations();
+            }
+        });
+    }
+
+    private void gotoPollLocations() {
+        Intent intent = new Intent(getActivity(), Locations.class);
+        MainFragment.this.startActivity(intent);
     }
 
     private void clickRepButton() {
