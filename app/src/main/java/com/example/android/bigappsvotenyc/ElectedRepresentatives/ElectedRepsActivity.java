@@ -22,9 +22,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by catwong on 1/29/17.
  */
 
-public class ElectedReps extends AppCompatActivity {
+public class ElectedRepsActivity extends AppCompatActivity {
 
-    private static final String TAG = ElectedReps.class.getSimpleName();
+    private static final String TAG = ElectedRepsActivity.class.getSimpleName();
     private static final String BASE_URL = "https://www.googleapis.com/civicinfo/v2/";
     private RecyclerView recyclerView;
     private RepOfficialAdapter officialAdapter;
@@ -55,8 +55,6 @@ public class ElectedReps extends AppCompatActivity {
             @Override
             public void onResponse(Call<RepResponse> call, Response<RepResponse> response) {
                 officialAdapter = new RepOfficialAdapter(response.body());
-                Log.d(TAG, "Response: " + response.body());
-                Log.d(TAG, "Size: " + response.body().getOfficials());
                 recyclerView.setAdapter(officialAdapter);
             }
 

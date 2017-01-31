@@ -7,11 +7,10 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 
+import com.example.android.bigappsvotenyc.ElectedRepresentatives.ElectedRepsActivity;
 import com.example.android.bigappsvotenyc.PollingLocations.Locations;
-import com.example.android.bigappsvotenyc.ElectedRepresentatives.ElectedReps;
 
 /**
  * Created by catwong on 1/29/17.
@@ -67,7 +66,7 @@ public class MainFragment extends Fragment {
     }
 
     private void representativesByInfo() {
-        Intent intent = new Intent(getActivity(), ElectedReps.class);
+        Intent intent = new Intent(getActivity(), ElectedRepsActivity.class);
         MainFragment.this.startActivity(intent);
     }
 
