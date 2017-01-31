@@ -1,4 +1,4 @@
-package com.example.android.bigappsvotenyc.Model;
+package com.example.android.bigappsvotenyc.PollingLocations.Model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

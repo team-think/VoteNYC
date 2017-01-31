@@ -1,4 +1,4 @@
-package com.example.android.bigappsvotenyc.Model;
+package com.example.android.bigappsvotenyc.PollingLocations.Model;
 
 /**
  * Created by mathcore on 1/29/17.

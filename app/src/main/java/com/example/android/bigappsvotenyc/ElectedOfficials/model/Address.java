@@ -1,6 +1,4 @@
-package com.example.android.bigappsvotenyc.ElectedRepresentatives.model;
-
-import java.util.List;
+package com.example.android.bigappsvotenyc.ElectedOfficials.model;
 
 /**
  * Created by catwong on 1/29/17.

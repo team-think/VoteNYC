@@ -1,4 +1,4 @@
-package com.example.android.bigappsvotenyc.ElectedRepresentatives.controller;
+package com.example.android.bigappsvotenyc.ElectedOfficials.controller;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -6,10 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.android.bigappsvotenyc.ElectedRepresentatives.model.Office;
-import com.example.android.bigappsvotenyc.ElectedRepresentatives.model.Official;
-import com.example.android.bigappsvotenyc.ElectedRepresentatives.model.RepResponse;
-import com.example.android.bigappsvotenyc.ElectedRepresentatives.view.RepViewHolder;
+import com.example.android.bigappsvotenyc.ElectedOfficials.model.Official;
+import com.example.android.bigappsvotenyc.ElectedOfficials.model.RepResponse;
+import com.example.android.bigappsvotenyc.ElectedOfficials.view.RepViewHolder;
 import com.example.android.bigappsvotenyc.R;
 
 import java.util.List;

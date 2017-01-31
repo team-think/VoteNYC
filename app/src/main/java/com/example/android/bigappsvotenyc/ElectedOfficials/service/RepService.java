@@ -1,8 +1,7 @@
-package com.example.android.bigappsvotenyc.ElectedRepresentatives.service;
+package com.example.android.bigappsvotenyc.ElectedOfficials.service;
 
 
-import com.example.android.bigappsvotenyc.ElectedRepresentatives.model.Address;
-import com.example.android.bigappsvotenyc.ElectedRepresentatives.model.RepResponse;
+import com.example.android.bigappsvotenyc.ElectedOfficials.model.RepResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

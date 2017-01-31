@@ -1,4 +1,4 @@
-package com.example.android.bigappsvotenyc;
+package com.example.android.bigappsvotenyc.PollingLocations;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -6,9 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.android.bigappsvotenyc.Model.Election;
-import com.example.android.bigappsvotenyc.Model.PollingLocation;
-import com.example.android.bigappsvotenyc.Model.VoterInfo;
+import com.example.android.bigappsvotenyc.PollingLocations.Model.Election;
+import com.example.android.bigappsvotenyc.PollingLocations.Model.PollingLocation;
+import com.example.android.bigappsvotenyc.PollingLocations.Model.VoterInfo;
+import com.example.android.bigappsvotenyc.R;
 
 import java.util.List;
 
