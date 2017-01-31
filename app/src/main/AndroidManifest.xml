@@ -17,7 +17,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ElectedRepresentatives.ElectedReps"/>
+        <activity android:name=".ElectedRepresentatives.ElectedRepsActivity"/>
     </application>
 
 </manifest>
