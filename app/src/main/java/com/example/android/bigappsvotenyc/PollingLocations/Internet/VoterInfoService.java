@@ -16,7 +16,7 @@ import retrofit2.http.Query;
 public interface VoterInfoService {
 
     @GET("voterinfo")
-    Call<List<VoterInfo>> getData(
+    Call<VoterInfo> getData(
             @Query("address") String address,
             @Query("electionId") String electionId,
             @Query("key") String API_KEY);
