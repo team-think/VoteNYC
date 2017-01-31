@@ -1,88 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#FFFFFF">
-
-    <EditText
-        android:id="@+id/et_address"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:background="#FFF00F"
-        android:textColor="#000000"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:id="@+id/tv_enter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/enter_location"
-        android:textColor="#000000"
-        android:textSize="25sp"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/et_address"
-        android:layout_centerHorizontal="true" />
-
+    android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/iv_vote"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/votenyc"
-        android:layout_marginBottom="59dp"
-        android:layout_above="@+id/et_address"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"/>
-
-
-    <ImageView
-        android:id="@+id/iv_ballot"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ballot"
-        android:layout_marginEnd="22dp"
-        android:layout_marginRight="22dp"
-        android:layout_alignBottom="@+id/iv_location_pin"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <ImageView
-        android:id="@+id/iv_location_pin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/location_pin"
-        android:layout_marginLeft="24dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="57dp"
-        android:layout_below="@+id/tv_enter"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:src="@drawable/votenyc" />
+
+    <EditText
+        android:id="@+id/address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_vote"
+        android:layout_centerHorizontal="true"
+        android:width="250dp" />
+
+    <View
+        android:id="@+id/UnderLine"
+        android:layout_width="250dp"
+        android:layout_height="2dp"
+        android:layout_below="@+id/address"
+        android:layout_centerHorizontal="true"
+        android:background="#03f94e" />
+
+    <EditText
+        android:id="@+id/city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/address"
+        android:layout_centerHorizontal="true"
+        android:width="250dp" />
+
+    <View
+        android:id="@+id/UnderLine2"
+        android:layout_width="250dp"
+        android:layout_height="2dp"
+        android:layout_below="@+id/city"
+        android:layout_centerHorizontal="true"
+        android:background="#03f94e" />
+
+    <EditText
+        android:id="@+id/state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/city"
+        android:layout_centerHorizontal="true"
+        android:width="250dp" />
+
+    <View
+        android:id="@+id/UnderLine3"
+        android:layout_width="250dp"
+        android:layout_height="2dp"
+        android:layout_below="@+id/state"
+        android:layout_centerHorizontal="true"
+        android:background="#03f94e" />
+
+    <EditText
+        android:id="@+id/zip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/city"
+        android:layout_centerHorizontal="true"
+        android:width="250dp" />
+
+    <View
+        android:id="@+id/UnderLine4"
+        android:layout_width="250dp"
+        android:layout_height="2dp"
+        android:layout_below="@+id/zip"
+        android:layout_centerHorizontal="true"
+        android:background="#03f94e" />
+
+    <ImageView
+        android:id="@+id/location_pin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/locationpin"
+        android:layout_above="@+id/tv_polling_place"
+        android:layout_alignStart="@+id/tv_polling_place"
+        android:layout_marginBottom="18dp"
+        android:clickable="true"/>
+        android:layout_below="@id/zip"
+        android:layout_marginLeft="50dp"
+        android:src="@drawable/location_pin" />
 
     <TextView
-        android:id="@+id/tv_polling_place"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#000000"
-        android:textSize="22sp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="13dp"
-        android:layout_marginStart="13dp"
-        android:layout_marginBottom="25dp" />
+        android:layout_below="@+id/location_pin"
+        android:layout_marginLeft="40dp"
+        android:text="Polling Place" />
 
     <ImageView
-        android:id="@+id/tv_rep_official"
+        android:id="@+id/official"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/official"
-        android:clickable="true"
-        android:layout_marginLeft="15dp"
-        android:layout_marginStart="15dp"
-        android:layout_alignBottom="@+id/iv_ballot"
-        android:layout_toRightOf="@+id/tv_polling_place"
-        android:layout_toEndOf="@+id/tv_polling_place" />
+        android:layout_below="@+id/zip"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/official" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/official"
+        android:layout_centerHorizontal="true"
+        android:text="Your Elected Officials" />
+
+    <ImageView
+        android:id="@+id/ballot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/zip"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/ballot" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/ballot"
+
+        android:layout_marginRight="20dp"
+        android:text="Next Election" />
 
 </RelativeLayout>

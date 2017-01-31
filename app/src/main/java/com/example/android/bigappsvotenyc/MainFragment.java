@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.example.android.bigappsvotenyc.ElectedRepresentatives.ElectedRepsActivity;
-
+import com.example.android.bigappsvotenyc.PollingLocations.Locations;
 
 /**
  * Created by catwong on 1/29/17.
@@ -21,22 +21,38 @@ public class MainFragment extends Fragment {
     private static final String TAG = MainFragment.class.getSimpleName();
     private ImageView getReps;
     private ImageView getElections;
-    private ImageView getPolls;
+    private ImageView pollLocations;
     private View mRoot;
 
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup parent, @Nullable Bundle savedInstanceState) {
         mRoot = inflater.inflate(R.layout.fragment_main, parent, false);
+        clickPollButton();
         clickRepButton();
-        representativesByInfo();
         return mRoot;
+    }
+
+    private void clickPollButton(){
+        pollLocation = (ImageView) mRoot.findViewById(R.id.iv_location_pin);
+        pollLocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoPollLocations();
+            }
+        });
+    }
+
+    private void gotoPollLocations() {
+        Intent intent = new Intent(getActivity(), Locations.class);
+        MainFragment.this.startActivity(intent);
     }
 
     private void clickRepButton() {
