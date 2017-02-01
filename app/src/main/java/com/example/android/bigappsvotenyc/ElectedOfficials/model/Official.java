@@ -1,11 +1,14 @@
 package com.example.android.bigappsvotenyc.ElectedOfficials.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.List;
 
 /**
  * Created by catwong on 1/29/17.
  */
-public class Official {
+public class Official implements Parcelable {
 
     private String name;
     private List<Address> address;
@@ -78,5 +81,15 @@ public class Official {
 
     public void setEmails(List<String> emails) {
         this.emails = emails;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+
     }
 }
