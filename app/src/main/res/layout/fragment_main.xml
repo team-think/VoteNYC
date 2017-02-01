@@ -59,51 +59,39 @@
         android:layout_centerHorizontal="true"
         android:background="#03f94e" />
 
-    <EditText
-        android:id="@+id/zip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/city"
-        android:layout_centerHorizontal="true"
-        android:width="250dp" />
-
-    <View
-        android:id="@+id/UnderLine4"
-        android:layout_width="250dp"
-        android:layout_height="2dp"
-        android:layout_below="@+id/zip"
-        android:layout_centerHorizontal="true"
-        android:background="#03f94e" />
-
     <ImageView
         android:id="@+id/location_pin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/zip"
-        android:layout_marginLeft="50dp"
+        android:layout_above="@+id/pollingplace"
+        android:layout_marginLeft="30dp"
         android:src="@drawable/location_pin" />
 
     <TextView
+        android:id="@+id/pollingplace"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/location_pin"
-        android:layout_marginLeft="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="10dp"
         android:text="Polling Place" />
 
     <ImageView
         android:id="@+id/official"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/zip"
+        android:layout_above="@+id/yourelectedofficials"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:src="@drawable/official" />
 
     <TextView
+        android:id="@+id/yourelectedofficials"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/official"
         android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
         android:text="Your Elected Officials" />
 
     <ImageView
@@ -111,17 +99,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_below="@id/zip"
-        android:layout_marginRight="20dp"
+        android:layout_above="@+id/nextelection"
+        android:layout_marginRight="15dp"
         android:src="@drawable/ballot" />
 
     <TextView
+        android:id="@+id/nextelection"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/ballot"
-
         android:layout_marginRight="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
         android:text="Next Election" />
+
+    <EditText
+        android:id="@+id/zip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="250dp" />
 
 </RelativeLayout>

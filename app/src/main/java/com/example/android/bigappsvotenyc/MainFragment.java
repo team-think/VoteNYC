@@ -20,12 +20,10 @@ import com.example.android.bigappsvotenyc.ElectedRepresentatives.ElectedReps;
 public class MainFragment extends Fragment {
 
     private static final String TAG = MainFragment.class.getSimpleName();
-<<<<<<< HEAD
-=======
+
     private ImageView getReps;
     private ImageView getElections;
     private ImageView getPolls;
->>>>>>> 2c269e089af17b12433d6e33a49e7299ed916668
     private View mRoot;
 
 
