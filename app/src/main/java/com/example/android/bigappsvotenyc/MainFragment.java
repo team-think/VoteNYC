@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.example.android.bigappsvotenyc.ElectedOfficials.ElectedOfficialsActivity;
+import com.example.android.bigappsvotenyc.ElectedOfficials.OfficialsFragment;
 import com.example.android.bigappsvotenyc.PollingLocations.PollLocationsActivity;
 
 /**
@@ -28,7 +29,6 @@ public class MainFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Nullable

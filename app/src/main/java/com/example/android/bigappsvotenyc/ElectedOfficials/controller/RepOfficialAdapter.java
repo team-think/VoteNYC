@@ -23,6 +23,9 @@ public class RepOfficialAdapter extends RecyclerView.Adapter<RepViewHolder> {
 //    private final List<Office> officeList;
 
 
+    public RepOfficialAdapter(){
+
+    }
     public RepOfficialAdapter(RepResponse data) {
         this.officialList = data.getOfficials();
     }
@@ -46,5 +49,9 @@ public class RepOfficialAdapter extends RecyclerView.Adapter<RepViewHolder> {
     @Override
     public int getItemCount() {
         return officialList.size();
+    }
+
+    public void setData(List<Official> data){
+        this.officialList= data;
     }
 }

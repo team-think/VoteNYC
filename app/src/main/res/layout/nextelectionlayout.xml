@@ -13,7 +13,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="250dp"
-        android:src="@drawable/locationpinsmall" />
+        android:src="@drawable/location_pin_small" />
 
     <TextView
         android:id="@+id/country"
@@ -31,7 +31,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginTop="250dp"
         android:layout_toRightOf="@+id/iv_location_pin_small1"
-        android:src="@drawable/locationpinsmall" />
+        android:src="@drawable/location_pin_small" />
 
     <TextView
         android:id="@+id/state"
@@ -50,7 +50,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginTop="250dp"
         android:layout_toRightOf="@+id/iv_location_pin_small2"
-        android:src="@drawable/locationpinsmall" />
+        android:src="@drawable/location_pin_small" />
 
     <TextView
         android:id="@+id/city"
@@ -68,7 +68,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginTop="250dp"
         android:layout_toRightOf="@+id/iv_location_pin_small3"
-        android:src="@drawable/locationpinsmall" />
+        android:src="@drawable/location_pin_small" />
 
     <TextView
         android:id="@+id/borough"
@@ -85,7 +85,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="250dp"
         android:layout_toRightOf="@+id/iv_location_pin_small4"
-        android:src="@drawable/locationpinsmall" />
+        android:src="@drawable/location_pin_small" />
 
     <TextView
         android:id="@+id/local"
