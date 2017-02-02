@@ -25,7 +25,7 @@
         android:layout_height="2dp"
         android:layout_below="@+id/address"
         android:layout_centerHorizontal="true"
-        android:background="#03f94e" />
+        android:background="#000080" />
 
     <EditText
         android:id="@+id/city"
@@ -41,7 +41,7 @@
         android:layout_height="2dp"
         android:layout_below="@+id/city"
         android:layout_centerHorizontal="true"
-        android:background="#03f94e" />
+        android:background="#000080" />
 
     <EditText
         android:id="@+id/state"
@@ -57,7 +57,24 @@
         android:layout_height="2dp"
         android:layout_below="@+id/state"
         android:layout_centerHorizontal="true"
-        android:background="#03f94e" />
+        android:background="#000080" />
+
+    <EditText
+        android:id="@+id/zip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/state"
+        android:layout_centerHorizontal="true"
+        android:width="250dp" />
+
+    <View
+        android:id="@+id/UnderLine4"
+        android:layout_width="250dp"
+        android:layout_height="2dp"
+        android:layout_below="@+id/zip"
+        android:layout_centerHorizontal="true"
+        android:background="#000080" />
+
 
     <ImageView
         android:id="@+id/location_pin"
@@ -112,11 +129,5 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="10dp"
         android:text="Next Election" />
-
-    <EditText
-        android:id="@+id/zip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:width="250dp" />
 
 </RelativeLayout>
