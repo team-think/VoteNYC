@@ -19,6 +19,7 @@
         android:layout_below="@+id/iv_vote"
         android:layout_centerHorizontal="true"
         android:width="250dp"
+        android:hint="@string/edit_address"
         android:background="#FFF00F" />
 
     <EditText
@@ -30,6 +31,7 @@
         android:layout_below="@+id/et_address"
         android:layout_marginTop="10dp"
         android:width="250dp"
+        android:hint="@string/edit_city"
         android:background="#FFF00F" />
 
     <EditText
@@ -41,6 +43,7 @@
         android:layout_below="@+id/et_city"
         android:layout_marginTop="12dp"
         android:width="250dp"
+        android:hint="@string/edit_state"
         android:background="#FFF00F" />
 
     <EditText
@@ -52,6 +55,7 @@
         android:layout_below="@+id/et_state"
         android:layout_marginTop="15dp"
         android:width="250dp"
+        android:hint="@string/edit_zip"
         android:background="#FFF00F" />
 
 

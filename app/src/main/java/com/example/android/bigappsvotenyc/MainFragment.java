@@ -3,7 +3,6 @@ package com.example.android.bigappsvotenyc;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +11,6 @@ import android.widget.ImageView;
 
 import com.example.android.bigappsvotenyc.ElectedOfficials.ElectedOfficialsActivity;
 import com.example.android.bigappsvotenyc.PollingLocations.PollLocationsActivity;
-import com.example.android.bigappsvotenyc.RecentBills.BillsFragment;
 import com.example.android.bigappsvotenyc.RecentBills.RecentBillsActivity;
 
 /**
@@ -27,6 +25,7 @@ public class MainFragment extends Fragment {
     private ImageView getLocations;
     private ImageView getRecentBills;
     private View mRoot;
+    public String address;
 
 
     @Override
@@ -44,7 +43,7 @@ public class MainFragment extends Fragment {
         return mRoot;
     }
 
-    private void clickPollButton(){
+    private void clickPollButton() {
         getLocations = (ImageView) mRoot.findViewById(R.id.iv_location_pin);
         getLocations.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,7 +87,6 @@ public class MainFragment extends Fragment {
         Intent intent = new Intent(getActivity(), RecentBillsActivity.class);
         MainFragment.this.startActivity(intent);
     }
-
 
 
 }
