@@ -11,5 +11,6 @@
     <string name="borough">Borough</string>
     <string name="county">County</string>
     <string name="local">Local</string>
+    <string name="recent_bills">Recent Bills</string>
     <string name="google_maps_api_key">AIzaSyCAxTPtkzrhpQcwJpJSdvCWle9Y4NuLsWw</string>
 </resources>
