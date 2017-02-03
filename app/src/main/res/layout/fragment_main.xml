@@ -54,75 +54,96 @@
         android:width="250dp"
         android:background="#FFF00F" />
 
-    <ImageView
-        android:id="@+id/iv_location_pin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/et_zip"
-        android:layout_marginTop="25dp"
-        android:layout_toLeftOf="@+id/tv_officials"
-        android:layout_toStartOf="@+id/tv_officials"
-        android:clickable="true"
-        android:src="@drawable/location_pin" />
-
-    <TextView
-        android:id="@+id/tv_location_pin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/tv_officials"
-        android:layout_alignBottom="@+id/tv_officials"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="15dp"
-        android:layout_marginStart="15dp"
-        android:text="Polling Place" />
-
-
-    <ImageView
-        android:id="@+id/iv_officials"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/tv_officials"
-        android:layout_alignRight="@+id/tv_officials"
-        android:layout_alignTop="@+id/iv_location_pin"
-        android:clickable="true"
-        android:src="@drawable/official" />
-
-
-    <TextView
-        android:id="@+id/tv_officials"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/iv_officials"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_toEndOf="@+id/tv_location_pin"
-        android:layout_toRightOf="@+id/tv_location_pin"
-        android:clickable="true"
-        android:text="Your Elected Officials" />
-
-    <TextView
-        android:id="@+id/tv_nextelection"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/iv_ballot"
-        android:layout_alignStart="@+id/iv_ballot"
-        android:layout_below="@+id/iv_ballot"
-        android:layout_marginLeft="10dp"
-        android:layout_marginStart="10dp"
-        android:text="Next Election" />
 
 
     <ImageView
         android:id="@+id/iv_ballot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
+        android:src="@drawable/ballot"
         android:layout_alignTop="@+id/iv_officials"
-        android:layout_marginEnd="13dp"
-        android:layout_marginRight="13dp"
-        android:src="@drawable/ballot" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:id="@+id/iv_location_pin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:clickable="true"
+        android:src="@drawable/location_pin"
+        android:layout_below="@+id/et_zip"
+        android:layout_toLeftOf="@+id/et_zip"
+        android:layout_toStartOf="@+id/et_zip" />
+
+    <TextView
+        android:id="@+id/tv_officials"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:text="Your Elected Officials"
+        android:layout_below="@+id/iv_officials"
+        android:layout_alignLeft="@+id/iv_officials"
+        android:layout_alignStart="@+id/iv_officials"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/iv_officials"
+        android:layout_alignEnd="@+id/iv_officials" />
+
+    <ImageView
+        android:id="@+id/iv_officials"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:src="@drawable/official"
+        android:layout_alignTop="@+id/iv_location_pin"
+        android:layout_toLeftOf="@+id/iv_bill"
+        android:layout_toStartOf="@+id/iv_bill"
+        android:layout_marginRight="17dp"
+        android:layout_marginEnd="17dp" />
+
+    <TextView
+        android:id="@+id/tv_location_pin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Polling Place"
+        android:layout_alignBaseline="@+id/tv_officials"
+        android:layout_alignBottom="@+id/tv_officials"
+        android:layout_alignLeft="@+id/iv_location_pin"
+        android:layout_alignStart="@+id/iv_location_pin"
+        android:layout_alignRight="@+id/iv_location_pin"
+        android:layout_alignEnd="@+id/iv_location_pin" />
+
+    <TextView
+        android:id="@+id/tv_nextelection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next Election"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/iv_ballot"
+        android:layout_alignStart="@+id/iv_ballot"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_below="@+id/iv_ballot" />
+
+    <ImageView
+        android:id="@+id/iv_bill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/bill_icon"
+        android:layout_marginRight="14dp"
+        android:layout_marginEnd="14dp"
+        android:layout_alignBottom="@+id/iv_location_pin"
+        android:layout_toLeftOf="@+id/iv_ballot"
+        android:layout_toStartOf="@+id/iv_ballot"
+        android:clickable="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/recent_bills"
+        android:layout_below="@+id/iv_ballot"
+        android:layout_alignRight="@+id/iv_bill"
+        android:layout_alignEnd="@+id/iv_bill" />
 
 
 </RelativeLayout>
