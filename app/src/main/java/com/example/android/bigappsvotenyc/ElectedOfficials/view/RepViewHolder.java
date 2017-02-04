@@ -37,6 +37,7 @@ public class RepViewHolder extends RecyclerView.ViewHolder {
         super(itemView);
 
         tv_repName = (TextView) itemView.findViewById(R.id.tv_rep_name);
+        tv_officePosition = (TextView) itemView.findViewById(R.id.tv_office_position);
         tv_party = (TextView) itemView.findViewById(R.id.tv_rep_party);
         tv_address_line1 = (TextView) itemView.findViewById(R.id.tv_rep_address_line1);
         tv_address_line2 = (TextView) itemView.findViewById(R.id.tv_rep_address_line2);
@@ -55,13 +56,19 @@ public class RepViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void bind(Official official) {
-        tv_repName.setText("Representative: " + official.getName());
-        tv_party.setText("Political Party: " + official.getParty());
-        tv_address_line1.setText("Address 1: " + official.getAddress().get(0).getLine1());
-        tv_address_line2.setText("Address 2: " + official.getAddress().get(0).getLine2());
-        tv_address_city.setText("City: " + official.getAddress().get(0).getCity());
-        tv_address_state.setText("State: " + official.getAddress().get(0).getState());
-        tv_address_zip.setText("Zip: " + official.getAddress().get(0).getZip());
+        tv_officePosition.setText(official.getOffice().getName());
+        tv_repName.setText(official.getName());
+        tv_party.setText(official.getParty());
+        tv_address_line1.setText(official.getAddress().get(0).getLine1());
+        if (official.getAddress().get(0).getLine2() == null) {
+            tv_address_line2.setVisibility(View.GONE);
+
+        } else {
+            tv_address_line2.setText(official.getAddress().get(0).getLine2());
+        }
+        tv_address_city.setText(official.getAddress().get(0).getCity());
+        tv_address_state.setText(official.getAddress().get(0).getState());
+        tv_address_zip.setText(official.getAddress().get(0).getZip());
 
         if (official.getPhones() == null) {
             tv_phone.setText("Phone: not available");
@@ -105,7 +112,6 @@ public class RepViewHolder extends RecyclerView.ViewHolder {
             tv_channel3_type.setText(official.getChannels().get(2).getType());
             tv_channel3_id.setText("Id: " + official.getChannels().get(2).getId());
         }
-
 
     }
 

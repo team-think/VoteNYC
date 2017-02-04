@@ -18,6 +18,28 @@ public class Official implements Parcelable {
     private String photoUrl;
     private List<Channel> channels;
     private List<String> emails;
+    Office office;
+
+    protected Official(Parcel in) {
+        name = in.readString();
+        party = in.readString();
+        phones = in.createStringArrayList();
+        urls = in.createStringArrayList();
+        photoUrl = in.readString();
+        emails = in.createStringArrayList();
+    }
+
+    public static final Creator<Official> CREATOR = new Creator<Official>() {
+        @Override
+        public Official createFromParcel(Parcel in) {
+            return new Official(in);
+        }
+
+        @Override
+        public Official[] newArray(int size) {
+            return new Official[size];
+        }
+    };
 
     public String getName() {
         return name;
@@ -83,6 +105,14 @@ public class Official implements Parcelable {
         this.emails = emails;
     }
 
+    public Office getOffice() {
+        return office;
+    }
+
+    public void setOffice(Office office) {
+        this.office = office;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -90,6 +120,11 @@ public class Official implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-
+        dest.writeString(name);
+        dest.writeString(party);
+        dest.writeStringList(phones);
+        dest.writeStringList(urls);
+        dest.writeString(photoUrl);
+        dest.writeStringList(emails);
     }
 }

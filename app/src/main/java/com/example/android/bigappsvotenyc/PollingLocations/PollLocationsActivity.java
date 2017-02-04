@@ -49,23 +49,24 @@ public class PollLocationsActivity extends AppCompatActivity {
                 .build();
 
         VoterInfoService service = retrofit.create(VoterInfoService.class);
+
         Intent intent = getIntent();
         String address = intent.getStringExtra(MainFragment.EXTRA_MESSAGE);
         String city = intent.getStringExtra(MainFragment.EXTRA_MESSAGE2);
         String state = intent.getStringExtra(MainFragment.EXTRA_MESSAGE3);
         String zipcode = intent.getStringExtra(MainFragment.EXTRA_MESSAGE4);
+
         Call<VoterInfo> call = service.getData(address + city + state + zipcode, "2000", key);
 
         call.enqueue(new Callback<VoterInfo>() {
             @Override
             public void onResponse(Call<VoterInfo> call, Response<VoterInfo> response) {
-                adapter = new PollAdapter((VoterInfo) response.body());
+                adapter = new PollAdapter(response.body());
                 recyclerView.setAdapter(adapter);
             }
 
             @Override
             public void onFailure(Call<VoterInfo> call, Throwable t) {
-
                 Log.d(TAG, "Error: " + t.getMessage());
 
             }
