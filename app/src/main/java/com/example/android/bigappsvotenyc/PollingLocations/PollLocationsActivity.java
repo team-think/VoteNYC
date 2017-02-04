@@ -24,7 +24,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 
 public class PollLocationsActivity extends AppCompatActivity {
-    public final static String EXTRA_MESSAGE = "com.example.android.bigappsvotenyc;";
+
     private static final String TAG = PollLocationsActivity.class.getSimpleName();
     private String key = "AIzaSyA1G4Wrf-G7pz3l-eXh6T6WPOoshE6aQQA";
     private RecyclerView recyclerView;
@@ -51,7 +51,10 @@ public class PollLocationsActivity extends AppCompatActivity {
         VoterInfoService service = retrofit.create(VoterInfoService.class);
         Intent intent = getIntent();
         String address = intent.getStringExtra(MainFragment.EXTRA_MESSAGE);
-        Call<VoterInfo> call = service.getData(address, "2000", key);
+        String city = intent.getStringExtra(MainFragment.EXTRA_MESSAGE2);
+        String state = intent.getStringExtra(MainFragment.EXTRA_MESSAGE3);
+        String zipcode = intent.getStringExtra(MainFragment.EXTRA_MESSAGE4);
+        Call<VoterInfo> call = service.getData(address + city + state + zipcode, "2000", key);
 
         call.enqueue(new Callback<VoterInfo>() {
             @Override

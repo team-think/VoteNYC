@@ -25,13 +25,20 @@ public class MainFragment extends Fragment {
 
     public final static String EXTRA_MESSAGE = "com.example.android.bigappsvotenyc;";
     private static final String TAG = MainFragment.class.getSimpleName();
+    public static final String EXTRA_MESSAGE2 = "com.example.android.bigappsvotenyc";
+    public static final String EXTRA_MESSAGE3 = "com.example.android.bigappsvotenyc";
+    public static final String EXTRA_MESSAGE4 = "com.example.android.bigappsvotenyc";
+
     private ImageView getOfficials;
     private ImageView getElections;
     private ImageView getLocations;
     private ImageView getRecentBills;
     private View mRoot;
     public String address;
-    public EditText editText;
+    public EditText etAddress;
+    public EditText etCity;
+    public EditText etState;
+    public EditText etZipCode;
 
 
     @Override
@@ -61,9 +68,18 @@ public class MainFragment extends Fragment {
 
     private void gotoPollLocations() {
         Intent intent = new Intent(getActivity(), PollLocationsActivity.class);
-        editText = (EditText) mRoot.findViewById(R.id.et_address);
-        String address = editText.getText().toString();
+        etAddress = (EditText) mRoot.findViewById(R.id.et_address);
+        etCity = (EditText) mRoot.findViewById(R.id.et_city);
+        etState = (EditText) mRoot.findViewById(R.id.et_state);
+        etZipCode = (EditText) mRoot.findViewById(R.id.et_zip);
+        String address = etAddress.getText().toString();
+        String city = etCity.getText().toString();
+        String state = etState.getText().toString();
+        String zipcode = etZipCode.getText().toString();
         intent.putExtra(EXTRA_MESSAGE, address);
+        intent.putExtra(EXTRA_MESSAGE2, city);
+        intent.putExtra(EXTRA_MESSAGE3, state);
+        intent.putExtra(EXTRA_MESSAGE4, zipcode);
         MainFragment.this.startActivity(intent);
     }
 
