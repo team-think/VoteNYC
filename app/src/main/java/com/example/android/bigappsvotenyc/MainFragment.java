@@ -3,17 +3,19 @@ package com.example.android.bigappsvotenyc;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.example.android.bigappsvotenyc.ElectedOfficials.ElectedOfficialsActivity;
 import com.example.android.bigappsvotenyc.PollingLocations.PollLocationsActivity;
-import com.example.android.bigappsvotenyc.RecentBills.BillsFragment;
 import com.example.android.bigappsvotenyc.RecentBills.RecentBillsActivity;
+
+
+
 
 /**
  * Created by catwong on 1/29/17.
@@ -21,12 +23,15 @@ import com.example.android.bigappsvotenyc.RecentBills.RecentBillsActivity;
 
 public class MainFragment extends Fragment {
 
+    public final static String EXTRA_MESSAGE = "com.example.android.bigappsvotenyc;";
     private static final String TAG = MainFragment.class.getSimpleName();
     private ImageView getOfficials;
     private ImageView getElections;
     private ImageView getLocations;
     private ImageView getRecentBills;
     private View mRoot;
+    public String address;
+    public EditText editText;
 
 
     @Override
@@ -44,7 +49,7 @@ public class MainFragment extends Fragment {
         return mRoot;
     }
 
-    private void clickPollButton(){
+    private void clickPollButton() {
         getLocations = (ImageView) mRoot.findViewById(R.id.iv_location_pin);
         getLocations.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,6 +61,9 @@ public class MainFragment extends Fragment {
 
     private void gotoPollLocations() {
         Intent intent = new Intent(getActivity(), PollLocationsActivity.class);
+        editText = (EditText) mRoot.findViewById(R.id.et_address);
+        String address = editText.getText().toString();
+        intent.putExtra(EXTRA_MESSAGE, address);
         MainFragment.this.startActivity(intent);
     }
 
@@ -88,7 +96,10 @@ public class MainFragment extends Fragment {
         Intent intent = new Intent(getActivity(), RecentBillsActivity.class);
         MainFragment.this.startActivity(intent);
     }
-
-
+//    public void getAddress(){
+//        editText = (EditText) mRoot.findViewById(R.id.et_address);
+//        String address = editText.getText().toString();
+//        intent.putExtra(EXTRA_MESSAGE, address);
+//    }
 
 }

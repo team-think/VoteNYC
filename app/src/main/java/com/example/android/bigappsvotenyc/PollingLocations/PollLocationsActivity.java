@@ -1,5 +1,6 @@
 package com.example.android.bigappsvotenyc.PollingLocations;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -7,11 +8,10 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
+import com.example.android.bigappsvotenyc.MainFragment;
 import com.example.android.bigappsvotenyc.PollingLocations.Internet.VoterInfoService;
 import com.example.android.bigappsvotenyc.PollingLocations.Model.VoterInfo;
 import com.example.android.bigappsvotenyc.R;
-
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -24,7 +24,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 
 public class PollLocationsActivity extends AppCompatActivity {
-
+    public final static String EXTRA_MESSAGE = "com.example.android.bigappsvotenyc;";
     private static final String TAG = PollLocationsActivity.class.getSimpleName();
     private String key = "AIzaSyA1G4Wrf-G7pz3l-eXh6T6WPOoshE6aQQA";
     private RecyclerView recyclerView;
@@ -41,7 +41,7 @@ public class PollLocationsActivity extends AppCompatActivity {
 
     }
 
-    public void downloadData(){
+    public void downloadData() {
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://www.googleapis.com/civicinfo/v2/")
@@ -49,8 +49,9 @@ public class PollLocationsActivity extends AppCompatActivity {
                 .build();
 
         VoterInfoService service = retrofit.create(VoterInfoService.class);
-
-        Call<VoterInfo> call = service.getData("682 Seneca Ave Queens NY 11385", "2000", key);
+        Intent intent = getIntent();
+        String address = intent.getStringExtra(MainFragment.EXTRA_MESSAGE);
+        Call<VoterInfo> call = service.getData(address, "2000", key);
 
         call.enqueue(new Callback<VoterInfo>() {
             @Override
