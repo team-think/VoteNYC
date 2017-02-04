@@ -3,6 +3,7 @@ package com.example.android.bigappsvotenyc.ElectedOfficials;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.annotation.Nullable;
@@ -12,9 +13,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.example.android.bigappsvotenyc.ElectedOfficials.model.Office;
 import com.example.android.bigappsvotenyc.ElectedOfficials.model.Official;
 import com.example.android.bigappsvotenyc.ElectedOfficials.model.RepResponse;
 import com.example.android.bigappsvotenyc.ElectedOfficials.service.RepService;
+import com.example.android.bigappsvotenyc.MainFragment;
 import com.example.android.bigappsvotenyc.R;
 
 import java.util.ArrayList;
@@ -40,6 +43,10 @@ public class OfficialsTopFragment extends Fragment {
     private static final String LEVELS_STATE_1 = "administrativeArea1";
     private static final String LEVELS_STATE_2 = "administrativeArea2";
     private static final String LEVELS_STATE_3 = "regional";
+    private static final String LEVELS_LOCALITY = "locality";
+    private static final String LEVELS_SUBLOCALITY_1 = "subLocality1";
+    private static final String LEVELS_SUBLOCALITY_2 = "subLocality2";
+    private static final String LEVELS_SPECIAL = "special";
     private static final String ROLES_HEAD_OF_STATE = "headOfState";
     private static final String ROLES_HEAD_OF_GOVERNMENT = "headOfGovernment";
     private static final String ROLES_DEPUTY_HEAD_OF_GOVERNMENT = "deputyHeadOfGovernment";
@@ -48,6 +55,9 @@ public class OfficialsTopFragment extends Fragment {
     private static final String ROLES_LEGISLATOR_UPPER_BODY = "legislatorUpperBody";
     private static final String ROLES_LEGISLATOR_LOWER_BODY = "legislatorLowerBody";
     private static final String ROLES_HIGHEST_COURT_JUDGE = "highestCourtJudge";
+    private static final String ROLES_JUDGE = "judge";
+    private static final String ROLES_SCHOOLBOARD = "schoolBoard";
+    private static final String ROLES_SPECIAL_PURPOSE_OFFICER = "specialPurposeOfficer";
     private static final String GOOGLE_CIVIC_API_KEY = "AIzaSyA1G4Wrf-G7pz3l-eXh6T6WPOoshE6aQQA";
     private RepService service;
     private List<Official> officialList;
@@ -93,8 +103,6 @@ public class OfficialsTopFragment extends Fragment {
                 connectToStateOfficials();
             }
         });
-
-
     }
 
 
@@ -106,7 +114,13 @@ public class OfficialsTopFragment extends Fragment {
 
         service = retrofit.create(RepService.class);
 
-        Call<RepResponse> call = service.getRepresentatives();
+        Intent intent = getActivity().getIntent();
+        String address = intent.getStringExtra(MainFragment.EXTRA_MESSAGE);
+        String city = intent.getStringExtra(MainFragment.EXTRA_MESSAGE2);
+        String state = intent.getStringExtra(MainFragment.EXTRA_MESSAGE3);
+        String zipcode = intent.getStringExtra(MainFragment.EXTRA_MESSAGE4);
+
+        Call<RepResponse> call = service.getOfficials(address + city + state + zipcode, INCLUDE_OFFICES, LEVELS_NATIONAL, LEVELS_STATE_1, LEVELS_STATE_2, LEVELS_STATE_3, LEVELS_LOCALITY, LEVELS_SUBLOCALITY_1, LEVELS_SUBLOCALITY_2, LEVELS_SPECIAL, ROLES_HEAD_OF_STATE, ROLES_HEAD_OF_GOVERNMENT, ROLES_DEPUTY_HEAD_OF_GOVERNMENT, ROLES_GOVERNMENT_OFFICER, ROLES_EXECUTIVE_COUNCIL, ROLES_LEGISLATOR_UPPER_BODY, ROLES_LEGISLATOR_LOWER_BODY, ROLES_HIGHEST_COURT_JUDGE, ROLES_JUDGE, ROLES_SCHOOLBOARD, ROLES_SPECIAL_PURPOSE_OFFICER, GOOGLE_CIVIC_API_KEY);
 
         call.enqueue(new Callback<RepResponse>() {
 
@@ -114,19 +128,19 @@ public class OfficialsTopFragment extends Fragment {
             public void onResponse(Call<RepResponse> call, Response<RepResponse> response) {
                 officialList = new ArrayList<Official>();
                 officialList = response.body().getOfficials();
+                setOfficePosition(response.body());
+
                 fragmentTransaction = fragmentManager.beginTransaction();
                 Bundle bundle = new Bundle();
                 bundle.putParcelableArrayList("DATA", (ArrayList<? extends Parcelable>) officialList);
                 OfficialsBottomFragment fragment = new OfficialsBottomFragment();
                 fragment.setArguments(bundle);
                 fragmentTransaction.replace(R.id.fragment_container_national, fragment).commit();
-
             }
 
             @Override
             public void onFailure(Call<RepResponse> call, Throwable t) {
                 Log.d(TAG, "Error: " + t.getMessage());
-
             }
         });
 
@@ -140,15 +154,23 @@ public class OfficialsTopFragment extends Fragment {
 
         service = retrofit.create(RepService.class);
 
-        // https://www.googleapis.com/civicinfo/v2/representatives?address=91+boerum+st&includeOffices=true&levels=country&roles=headOfState&roles=headOfGovernment&roles=deputyHeadOfGovernment&roles=governmentOfficer&key=AIzaSyA1G4Wrf-G7pz3l-eXh6T6WPOoshE6aQQ
+        // https://www.googleapis.com/civicinfo/v2/representatives?address=91+boerum+st&includeOffices=true&levels=country&key={YOUR_API_KEY}
 
-        Call<RepResponse> callNational = service.getNationalOfficials("91 Boerum St Brooklyn NY 11206", INCLUDE_OFFICES, LEVELS_NATIONAL, ROLES_HEAD_OF_STATE, ROLES_HEAD_OF_GOVERNMENT, ROLES_DEPUTY_HEAD_OF_GOVERNMENT, ROLES_GOVERNMENT_OFFICER, GOOGLE_CIVIC_API_KEY);
+        Intent intent = getActivity().getIntent();
+        String address = intent.getStringExtra(MainFragment.EXTRA_MESSAGE);
+        String city = intent.getStringExtra(MainFragment.EXTRA_MESSAGE2);
+        String state = intent.getStringExtra(MainFragment.EXTRA_MESSAGE3);
+        String zipcode = intent.getStringExtra(MainFragment.EXTRA_MESSAGE4);
+
+        Call<RepResponse> callNational = service.getNationalOfficials(address + city + state + zipcode, INCLUDE_OFFICES, LEVELS_NATIONAL, GOOGLE_CIVIC_API_KEY);
 
         callNational.enqueue(new Callback<RepResponse>() {
             @Override
             public void onResponse(Call<RepResponse> call, Response<RepResponse> response) {
                 officialList = new ArrayList<Official>();
                 officialList = response.body().getOfficials();
+                setOfficePosition(response.body());
+
                 fragmentTransaction = fragmentManager.beginTransaction();
                 Bundle bundle = new Bundle();
                 bundle.putParcelableArrayList("DATA", (ArrayList<? extends Parcelable>) officialList);
@@ -160,7 +182,6 @@ public class OfficialsTopFragment extends Fragment {
             @Override
             public void onFailure(Call<RepResponse> call, Throwable t) {
                 Log.d(TAG, "Error: " + t.getMessage());
-
             }
         });
 
@@ -176,15 +197,23 @@ public class OfficialsTopFragment extends Fragment {
 
         service = retrofit.create(RepService.class);
 
-    //   //https://www.googleapis.com/civicinfo/v2/representatives?address=33+irving+place&includeOffices=true&levels=administrativeArea1&levels=administrativeArea2&levels=regional&roles=headOfGovernment&roles=deputyHeadOfGovernment&key={YOUR_API_KEY}
+    //   https://www.googleapis.com/civicinfo/v2/representatives?address=91+boerum+st&includeOffices=true&levels=administrativeArea1&levels=administrativeArea2&key={YOUR_API_KEY}
 
-        Call<RepResponse> callState = service.getStateOfficials("91 Boerum St Brooklyn NY 11206", INCLUDE_OFFICES, LEVELS_STATE_1, LEVELS_STATE_2, LEVELS_STATE_3, ROLES_HEAD_OF_GOVERNMENT, ROLES_DEPUTY_HEAD_OF_GOVERNMENT, GOOGLE_CIVIC_API_KEY);
+        Intent intent = getActivity().getIntent();
+        String address = intent.getStringExtra(MainFragment.EXTRA_MESSAGE);
+        String city = intent.getStringExtra(MainFragment.EXTRA_MESSAGE2);
+        String state = intent.getStringExtra(MainFragment.EXTRA_MESSAGE3);
+        String zipcode = intent.getStringExtra(MainFragment.EXTRA_MESSAGE4);
+
+        Call<RepResponse> callState = service.getStateOfficials(address + city + state + zipcode, INCLUDE_OFFICES, LEVELS_STATE_1, LEVELS_STATE_2, LEVELS_STATE_3, GOOGLE_CIVIC_API_KEY);
 
         callState.enqueue(new Callback<RepResponse>() {
             @Override
             public void onResponse(Call<RepResponse> call, Response<RepResponse> response) {
                 officialList = new ArrayList<Official>();
                 officialList = response.body().getOfficials();
+                setOfficePosition(response.body());
+
                 fragmentTransaction = fragmentManager.beginTransaction();
                 Bundle bundle = new Bundle();
                 bundle.putParcelableArrayList("DATA", (ArrayList<? extends Parcelable>) officialList);
@@ -198,5 +227,19 @@ public class OfficialsTopFragment extends Fragment {
                 Log.d(TAG, "Error: " + t.getMessage());
             }
         });
+    }
+
+    private void setOfficePosition(RepResponse response){
+        int officialIndex = 0;
+        List<Office> offices = response.getOffices();
+        Log.d("OFFICES",offices.size()+"");
+        for (Official official : response.getOfficials()) {
+            for (int i = 0; i < offices.size(); i++) {
+                if(offices.get(i).getOfficialIndices().contains(officialIndex))
+                    official.setOffice(offices.get(i));
+            }
+            officialIndex++;
+        }
+
     }
 }

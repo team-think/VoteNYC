@@ -44,14 +44,14 @@ public class OfficialsBottomFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
-        View mRoot = inflater.inflate(R.layout.fragment_officials_national, parent, false);
+        View mRoot = inflater.inflate(R.layout.fragment_officials_bottom, parent, false);
         return mRoot;
     }
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        recyclerView = (RecyclerView) view.findViewById(R.id.rv_officials_national);
+        recyclerView = (RecyclerView) view.findViewById(R.id.rv_officials_bottom);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
         officialAdapter = new RepOfficialAdapter();
         officialAdapter.setData(officialList);

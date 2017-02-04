@@ -20,12 +20,11 @@ import java.util.List;
 public class RepOfficialAdapter extends RecyclerView.Adapter<RepViewHolder> {
 
     private List<Official> officialList;
-//    private final List<Office> officeList;
-
 
     public RepOfficialAdapter(){
 
     }
+
     public RepOfficialAdapter(RepResponse data) {
         this.officialList = data.getOfficials();
     }
