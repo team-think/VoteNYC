@@ -48,7 +48,9 @@ public class PollLocationsActivity extends AppCompatActivity implements OnMapRea
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-
+        LatLng newyorkcity = new LatLng(40.7128, -74.0059);
+        googleMap.addMarker(new MarkerOptions().position(newyorkcity).title("Political"));
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(newyorkcity,11));
     }
 
     public void downloadData() {
