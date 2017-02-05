@@ -13,13 +13,13 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".ElectedOfficials.ElectedOfficialsActivity" />
         <activity android:name=".PollingLocations.PollLocationsActivity" />
         <activity android:name=".RecentBills.RecentBillsActivity" />
+        <activity android:name=".NextElection.NextElectionActivity" />
 
         <meta-data
             android:name="com.google.android.gms.version"

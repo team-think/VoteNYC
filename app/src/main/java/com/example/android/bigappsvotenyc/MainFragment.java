@@ -9,8 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
-
 import com.example.android.bigappsvotenyc.ElectedOfficials.ElectedOfficialsActivity;
+import com.example.android.bigappsvotenyc.NextElection.NextElectionActivity;
 import com.example.android.bigappsvotenyc.PollingLocations.PollLocationsActivity;
 import com.example.android.bigappsvotenyc.RecentBills.RecentBillsActivity;
 
@@ -51,8 +51,10 @@ public class MainFragment extends Fragment {
         clickPollButton();
         clickOfficialsButton();
         clickBills();
+        clickElectionsButton();
         return mRoot;
     }
+
 
     private void clickPollButton() {
         getLocations = (ImageView) mRoot.findViewById(R.id.iv_location_pin);
@@ -123,5 +125,18 @@ public class MainFragment extends Fragment {
         MainFragment.this.startActivity(intent);
     }
 
+    private void clickElectionsButton() {
+        getElections = (ImageView) mRoot.findViewById(R.id.iv_ballot);
+        getElections.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToNextElections();
+            }
+        });
+    }
 
+    private void goToNextElections() {
+        Intent intent = new Intent(getActivity(), NextElectionActivity.class);
+        MainFragment.this.startActivity(intent);
+    }
 }

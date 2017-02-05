@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BigAppsVoteOrDie</string>
+    <string name="app_name">BigAppsVoteNYC</string>
     <string name="enter_location">Enter your location to find:</string>
     <string name="poll_place">Poll Sites</string>
     <string name="elected_officials">Your Elected Officials</string>
