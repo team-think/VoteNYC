@@ -36,7 +36,7 @@ public class BillsFragmentBottom extends Fragment{
         Bundle bundle = getArguments();
         if (bundle != null) {
             billList = bundle.getParcelableArrayList("DATA");
-            System.out.println("dfdsdsfsd" + billList.size());
+            System.out.println("Size: " + billList.size());
         } else {
             billList = new ArrayList<>();
         }

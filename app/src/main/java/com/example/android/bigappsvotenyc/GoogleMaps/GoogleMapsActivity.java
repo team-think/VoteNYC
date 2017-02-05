@@ -1,5 +1,4 @@
-package com.example.android.bigappsvotenyc.NextElection;
-import android.app.FragmentTransaction;
+package com.example.android.bigappsvotenyc.GoogleMaps;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -11,10 +10,8 @@ import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import static android.R.attr.x;
-import static android.R.attr.y;
 
-public class NextElectionActivity extends AppCompatActivity implements OnMapReadyCallback {
+public class GoogleMapsActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

@@ -59,6 +59,8 @@ public class RepViewHolder extends RecyclerView.ViewHolder {
         tv_officePosition.setText(official.getOffice().getName());
         tv_repName.setText(official.getName());
         tv_party.setText(official.getParty());
+
+
         tv_address_line1.setText(official.getAddress().get(0).getLine1());
         if (official.getAddress().get(0).getLine2() == null) {
             tv_address_line2.setVisibility(View.GONE);
@@ -71,31 +73,31 @@ public class RepViewHolder extends RecyclerView.ViewHolder {
         tv_address_zip.setText(official.getAddress().get(0).getZip());
 
         if (official.getPhones() == null) {
-            tv_phone.setText("Phone: not available");
+            tv_phone.setVisibility(View.GONE);
         } else {
             tv_phone.setText("Phone: " + official.getPhones().get(0));
         }
 
         if (official.getEmails() == null) {
-            tv_email.setText("Email: not available");
+            tv_email.setVisibility(View.GONE);
         } else {
             tv_email.setText("Email: " + official.getEmails().get(0));
         }
 
         if (official.getUrls() == null) {
-            tv_website.setText("Website: not available");
+            tv_website.setVisibility(View.GONE);
         } else {
             tv_website.setText("Website: " + official.getUrls().get(0));
         }
 
 
         if (official.getChannels() == null) {
-            tv_channel1_type.setText("Channel: not available");
-            tv_channel1_id.setText("Id: not available");
-            tv_channel2_type.setText("Channel: not available");
-            tv_channel2_id.setText("Id: not available");
-            tv_channel3_type.setText("Channel: not available");
-            tv_channel3_id.setText("Id: not available");
+            tv_channel1_type.setVisibility(View.GONE);
+            tv_channel1_id.setVisibility(View.GONE);
+            tv_channel2_type.setVisibility(View.GONE);
+            tv_channel2_id.setVisibility(View.GONE);
+            tv_channel3_type.setVisibility(View.GONE);
+            tv_channel3_id.setVisibility(View.GONE);
         } else if (official.getChannels().size() == 2) {
             tv_channel1_type.setText(official.getChannels().get(0).getType());
             tv_channel1_id.setText("Id: " + official.getChannels().get(0).getId());

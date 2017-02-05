@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import com.example.android.bigappsvotenyc.ElectedOfficials.ElectedOfficialsActivity;
-import com.example.android.bigappsvotenyc.NextElection.NextElectionActivity;
+import com.example.android.bigappsvotenyc.GoogleMaps.GoogleMapsActivity;
 import com.example.android.bigappsvotenyc.PollingLocations.PollLocationsActivity;
 import com.example.android.bigappsvotenyc.RecentBills.RecentBillsActivity;
 
@@ -136,7 +136,7 @@ public class MainFragment extends Fragment {
     }
 
     private void goToNextElections() {
-        Intent intent = new Intent(getActivity(), NextElectionActivity.class);
+        Intent intent = new Intent(getActivity(), GoogleMapsActivity.class);
         MainFragment.this.startActivity(intent);
     }
 }
