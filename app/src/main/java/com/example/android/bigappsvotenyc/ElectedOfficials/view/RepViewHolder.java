@@ -115,10 +115,5 @@ public class RepViewHolder extends RecyclerView.ViewHolder {
 
     }
 
-    public void bind(Office office) {
-        tv_officePosition.setText("Position: " + office.getName());
-
-    }
-
 
 }

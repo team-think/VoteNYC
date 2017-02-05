@@ -1,10 +1,13 @@
 package com.example.android.bigappsvotenyc.RecentBills.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Created by catwong on 2/2/17.
  */
 
-public class Bill {
+public class Bill implements Parcelable {
 
     private String number;
     private String bill_uri;
@@ -16,6 +19,31 @@ public class Bill {
     private String primary_subject;
     private String latest_major_action_date;
     private String latest_major_action;
+
+    protected Bill(Parcel in) {
+        number = in.readString();
+        bill_uri = in.readString();
+        title = in.readString();
+        sponsor_uri = in.readString();
+        introduced_date = in.readString();
+        cosponsors = in.readString();
+        committees = in.readString();
+        primary_subject = in.readString();
+        latest_major_action_date = in.readString();
+        latest_major_action = in.readString();
+    }
+
+    public static final Creator<Bill> CREATOR = new Creator<Bill>() {
+        @Override
+        public Bill createFromParcel(Parcel in) {
+            return new Bill(in);
+        }
+
+        @Override
+        public Bill[] newArray(int size) {
+            return new Bill[size];
+        }
+    };
 
     public String getNumber() {
         return number;
@@ -95,5 +123,24 @@ public class Bill {
 
     public void setLatest_major_action(String latest_major_action) {
         this.latest_major_action = latest_major_action;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(number);
+        dest.writeString(bill_uri);
+        dest.writeString(title);
+        dest.writeString(sponsor_uri);
+        dest.writeString(introduced_date);
+        dest.writeString(cosponsors);
+        dest.writeString(committees);
+        dest.writeString(primary_subject);
+        dest.writeString(latest_major_action_date);
+        dest.writeString(latest_major_action);
     }
 }

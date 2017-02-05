@@ -135,7 +135,7 @@ public class OfficialsTopFragment extends Fragment {
                 bundle.putParcelableArrayList("DATA", (ArrayList<? extends Parcelable>) officialList);
                 OfficialsBottomFragment fragment = new OfficialsBottomFragment();
                 fragment.setArguments(bundle);
-                fragmentTransaction.replace(R.id.fragment_container_national, fragment).commit();
+                fragmentTransaction.replace(R.id.fragment_container_officials_bottom, fragment).commit();
             }
 
             @Override
@@ -176,7 +176,7 @@ public class OfficialsTopFragment extends Fragment {
                 bundle.putParcelableArrayList("DATA", (ArrayList<? extends Parcelable>) officialList);
                 OfficialsBottomFragment fragment = new OfficialsBottomFragment();
                 fragment.setArguments(bundle);
-                fragmentTransaction.replace(R.id.fragment_container_national, fragment).commit();
+                fragmentTransaction.replace(R.id.fragment_container_officials_bottom, fragment).commit();
             }
 
             @Override
@@ -219,7 +219,7 @@ public class OfficialsTopFragment extends Fragment {
                 bundle.putParcelableArrayList("DATA", (ArrayList<? extends Parcelable>) officialList);
                 OfficialsBottomFragment fragment = new OfficialsBottomFragment();
                 fragment.setArguments(bundle);
-                fragmentTransaction.replace(R.id.fragment_container_national, fragment).commit();
+                fragmentTransaction.replace(R.id.fragment_container_officials_bottom, fragment).commit();
             }
 
             @Override

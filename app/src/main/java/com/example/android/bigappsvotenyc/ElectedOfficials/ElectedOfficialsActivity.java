@@ -22,7 +22,7 @@ public class ElectedOfficialsActivity extends AppCompatActivity {
             getFragmentManager()
                     .beginTransaction()
                     .add(R.id.fragment_container_officals, new OfficialsTopFragment(), "fragment_officials_top")
-                    .add(R.id.fragment_container_national, new OfficialsBottomFragment(), "fragment_officials_bottom")
+                    .add(R.id.fragment_container_officials_bottom, new OfficialsBottomFragment(), "fragment_officials_bottom")
                     .commit();
         }
 

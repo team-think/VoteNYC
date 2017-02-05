@@ -28,6 +28,7 @@ public class OfficialsBottomFragment extends Fragment {
     private RecyclerView recyclerView;
     private RepOfficialAdapter officialAdapter;
     private RepService service;
+    private View mRoot;
     private List<Official> officialList;
 
     @Override
@@ -44,7 +45,7 @@ public class OfficialsBottomFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
-        View mRoot = inflater.inflate(R.layout.fragment_officials_bottom, parent, false);
+        mRoot = inflater.inflate(R.layout.fragment_officials_bottom, parent, false);
         return mRoot;
     }
 
