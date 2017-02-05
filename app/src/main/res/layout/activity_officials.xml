@@ -9,15 +9,9 @@
         android:layout_height="320dp">
     </FrameLayout>
 
-    <!--<FrameLayout-->
-        <!--android:id="@+id/fragment_container_officals_middle"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="100dp"-->
-        <!--android:background="@color/colorAccent">-->
-    <!--</FrameLayout>-->
 
     <FrameLayout
-        android:id="@+id/fragment_container_national"
+        android:id="@+id/fragment_container_officials_bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#F0F8FF">

@@ -51,6 +51,6 @@ public class RepOfficialAdapter extends RecyclerView.Adapter<RepViewHolder> {
     }
 
     public void setData(List<Official> data){
-        this.officialList= data;
+        this.officialList = data;
     }
 }

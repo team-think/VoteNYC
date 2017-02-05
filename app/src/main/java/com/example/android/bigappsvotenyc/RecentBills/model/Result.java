@@ -1,18 +1,42 @@
 package com.example.android.bigappsvotenyc.RecentBills.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.List;
 
 /**
  * Created by catwong on 2/2/17.
  */
 
-public class Result {
+public class Result implements Parcelable {
 
     private String congress;
     private String chameber;
     private String num_Results;
     private String offset;
     private List<Bill> bills;
+    private Bill bill;
+
+    protected Result(Parcel in) {
+        congress = in.readString();
+        chameber = in.readString();
+        num_Results = in.readString();
+        offset = in.readString();
+        bills = in.createTypedArrayList(Bill.CREATOR);
+    }
+
+    public static final Creator<Result> CREATOR = new Creator<Result>() {
+        @Override
+        public Result createFromParcel(Parcel in) {
+            return new Result(in);
+        }
+
+        @Override
+        public Result[] newArray(int size) {
+            return new Result[size];
+        }
+    };
 
     public String getCongress() {
         return congress;
@@ -52,5 +76,27 @@ public class Result {
 
     public void setBills(List<Bill> bills) {
         this.bills = bills;
+    }
+
+    public Bill getBill() {
+        return bill;
+    }
+
+    public void setBill(Bill bill) {
+        this.bill = bill;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(congress);
+        dest.writeString(chameber);
+        dest.writeString(num_Results);
+        dest.writeString(offset);
+        dest.writeTypedList(bills);
     }
 }

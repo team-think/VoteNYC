@@ -17,5 +17,16 @@
     <string name="edit_city">City</string>
     <string name="edit_state">State</string>
     <string name="edit_zip">Zipcode</string>
-    <string name="title_activity_main2">Main2Activity</string>
+    <string name="senate">US Senate</string>
+    <string name="house">House of Representatives</string>
+    <string name="bill_number">Bill Number</string>
+    <string name="bill_title">Bill Title</string>
+    <string name="bill_introduced_date">Bill Introduced Date: </string>
+    <string name="bill_cosponsors">Cosponsors: </string>
+    <string name="bill_committees">Committees: </string>
+    <string name="bill_latest_major_action_date">Latest Action Date: </string>
+    <string name="bill_latest_major_action">Lates Major Action: </string>
+
+
+
 </resources>

@@ -20,7 +20,8 @@ public class RecentBillsActivity extends AppCompatActivity {
         if (savedInstanceState == null) {
             getFragmentManager()
                     .beginTransaction()
-                    .add(R.id.fragment_container_recent_bills, new BillsFragment())
+                    .add(R.id.fragment_container_recent_bills, new BillsFragmentTop(), "fragment_recent_bills_top")
+                    .add(R.id.fragment_container_recent_bills_bottom, new BillsFragmentBottom(), "fragment_recent_bills_bottom")
                     .commit();
         }
     }
