@@ -32,7 +32,6 @@ public class MainFragment extends Fragment {
     private ImageView getLocations;
     private ImageView getRecentBills;
     private View mRoot;
-    public String address;
     public EditText etAddress;
     public EditText etCity;
     public EditText etState;

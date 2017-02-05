@@ -19,6 +19,12 @@ import com.example.android.bigappsvotenyc.ElectedOfficials.model.RepResponse;
 import com.example.android.bigappsvotenyc.ElectedOfficials.service.RepService;
 import com.example.android.bigappsvotenyc.MainFragment;
 import com.example.android.bigappsvotenyc.R;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +40,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by catwong on 1/31/17.
  */
 
-public class OfficialsTopFragment extends Fragment {
+public class OfficialsTopFragment extends Fragment implements OnMapReadyCallback {
 
     private static final String TAG = ElectedOfficialsActivity.class.getSimpleName();
     private static final String BASE_URL = "https://www.googleapis.com/civicinfo/v2/";
@@ -65,6 +71,7 @@ public class OfficialsTopFragment extends Fragment {
     private FragmentManager fragmentManager;
     private ImageView official_national;
     private ImageView official_state;
+    private GoogleMap googleMap;
     private View mRoot;
 
 
@@ -79,9 +86,24 @@ public class OfficialsTopFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
         mRoot = inflater.inflate(R.layout.fragment_officials, parent, false);
+//        final MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.map);
+//        mapFragment.getMapAsync(new OnMapReadyCallback() {
+//            @Override
+//            public void onMapReady(GoogleMap map) {
+//                googleMap = map;
+//            }
+//        });
         clickNationalOfficials();
         clickStateOfficials();
         return mRoot;
+    }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        LatLng newyorkcity = new LatLng(40.7128, -74.0059);
+        googleMap.addMarker(new MarkerOptions().position(newyorkcity).title("Political"));
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(newyorkcity,11));
+
     }
 
 
@@ -242,4 +264,5 @@ public class OfficialsTopFragment extends Fragment {
         }
 
     }
+
 }
