@@ -1,32 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:layout_marginTop="1dp"
+    android:layout_marginLeft="3dp">
 
-    <TextView
-        android:id="@+id/tv_rep_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:id="@+id/tv_rep_party"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/tv_office_position"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        />
 
     <TextView
-        android:id="@+id/tv_rep_address"
+        android:id="@+id/tv_rep_name"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/tv_office_position"
+        />
+
+
+    <TextView
+        android:id="@+id/tv_rep_party"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_rep_name"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="22sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tv_rep_address_line1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_rep_party"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/tv_rep_address_line2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_rep_address_line1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/tv_rep_address_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tv_rep_address_city"
+        android:layout_alignBottom="@+id/tv_rep_address_city"
+        android:layout_toRightOf="@+id/tv_rep_address_city"
+        android:layout_toEndOf="@+id/tv_rep_address_city" />
+
+    <TextView
+        android:id="@+id/tv_rep_address_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_rep_address_line2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/tv_rep_address_zip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tv_rep_address_state"
+        android:layout_alignBottom="@+id/tv_rep_address_state"
+        android:layout_toRightOf="@+id/tv_rep_address_state"
+        android:layout_toEndOf="@+id/tv_rep_address_state" />
 
     <TextView
         android:id="@+id/tv_rep_phones"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_rep_address_state"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/tv_rep_urls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_rep_phones"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/tv_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_rep_urls"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/tv_rep_channel1_type"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_email"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/tv_rep_channel1_id"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tv_rep_channel1_type"
+        android:layout_alignBottom="@+id/tv_rep_channel1_type"
+        android:layout_toRightOf="@+id/tv_rep_channel1_type"
+        android:layout_toEndOf="@+id/tv_rep_channel1_type" />
+
+    <TextView
+        android:id="@+id/tv_rep_channel2_type"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_rep_channel1_type"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
+    <TextView
+        android:id="@+id/tv_rep_channel2_id"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tv_rep_channel2_type"
+        android:layout_alignBottom="@+id/tv_rep_channel2_type"
+        android:layout_toRightOf="@+id/tv_rep_channel2_type"
+        android:layout_toEndOf="@+id/tv_rep_channel2_type" />
+
+    <TextView
+        android:id="@+id/tv_rep_channel3_type"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_rep_channel2_type"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/tv_rep_channel3_id"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tv_rep_channel3_type"
+        android:layout_alignBottom="@+id/tv_rep_channel3_type"
+        android:layout_toRightOf="@+id/tv_rep_channel3_type"
+        android:layout_toEndOf="@+id/tv_rep_channel3_type" />
+
+
+
+</RelativeLayout>
