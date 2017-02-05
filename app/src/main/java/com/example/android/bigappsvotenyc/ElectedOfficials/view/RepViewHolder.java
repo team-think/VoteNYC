@@ -1,6 +1,9 @@
 package com.example.android.bigappsvotenyc.ElectedOfficials.view;
 
+import android.content.res.Resources;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
+import android.text.util.Linkify;
 import android.view.View;
 import android.widget.TextView;
 
@@ -31,10 +34,12 @@ public class RepViewHolder extends RecyclerView.ViewHolder {
     private TextView tv_channel3_type;
     private TextView tv_channel3_id;
     private TextView tv_officePosition;
+    private Resources resources;
 
 
     public RepViewHolder(View itemView) {
         super(itemView);
+        resources = itemView.getResources();
 
         tv_repName = (TextView) itemView.findViewById(R.id.tv_rep_name);
         tv_officePosition = (TextView) itemView.findViewById(R.id.tv_office_position);
@@ -58,36 +63,58 @@ public class RepViewHolder extends RecyclerView.ViewHolder {
     public void bind(Official official) {
         tv_officePosition.setText(official.getOffice().getName());
         tv_repName.setText(official.getName());
-        tv_party.setText(official.getParty());
 
+        if(official.getParty().equalsIgnoreCase("Republican")) {
+            tv_party.setText(official.getParty());
+            tv_party.setTextColor(Color.rgb(233,29,14));
+        } else if(official.getParty().equalsIgnoreCase("Democratic")) {
+            tv_party.setText(official.getParty());
+            tv_party.setTextColor(Color.BLUE);
+        } else {
+            tv_party.setText(official.getParty());
+
+        }
 
         tv_address_line1.setText(official.getAddress().get(0).getLine1());
+        Linkify.addLinks(tv_address_line1, Linkify.MAP_ADDRESSES);
+
+
         if (official.getAddress().get(0).getLine2() == null) {
             tv_address_line2.setVisibility(View.GONE);
 
         } else {
             tv_address_line2.setText(official.getAddress().get(0).getLine2());
+            Linkify.addLinks(tv_address_line2, Linkify.ALL);
+
         }
+
         tv_address_city.setText(official.getAddress().get(0).getCity());
+        Linkify.addLinks(tv_address_city, Linkify.MAP_ADDRESSES);
         tv_address_state.setText(official.getAddress().get(0).getState());
+        Linkify.addLinks(tv_address_state, Linkify.MAP_ADDRESSES);
         tv_address_zip.setText(official.getAddress().get(0).getZip());
+        Linkify.addLinks(tv_address_zip, Linkify.MAP_ADDRESSES);
+
 
         if (official.getPhones() == null) {
             tv_phone.setVisibility(View.GONE);
         } else {
             tv_phone.setText("Phone: " + official.getPhones().get(0));
+            Linkify.addLinks(tv_phone, Linkify.PHONE_NUMBERS);
         }
 
         if (official.getEmails() == null) {
             tv_email.setVisibility(View.GONE);
         } else {
             tv_email.setText("Email: " + official.getEmails().get(0));
+            Linkify.addLinks(tv_email, Linkify.EMAIL_ADDRESSES);
         }
 
         if (official.getUrls() == null) {
             tv_website.setVisibility(View.GONE);
         } else {
             tv_website.setText("Website: " + official.getUrls().get(0));
+            Linkify.addLinks(tv_website, Linkify.WEB_URLS);
         }
 
 

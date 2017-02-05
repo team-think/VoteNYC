@@ -21,7 +21,6 @@ import com.example.android.bigappsvotenyc.MainFragment;
 import com.example.android.bigappsvotenyc.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -40,7 +39,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by catwong on 1/31/17.
  */
 
-public class OfficialsTopFragment extends Fragment implements OnMapReadyCallback {
+public class OfficialsTopFragment extends Fragment {
 
     private static final String TAG = ElectedOfficialsActivity.class.getSimpleName();
     private static final String BASE_URL = "https://www.googleapis.com/civicinfo/v2/";
@@ -71,6 +70,7 @@ public class OfficialsTopFragment extends Fragment implements OnMapReadyCallback
     private FragmentManager fragmentManager;
     private ImageView official_national;
     private ImageView official_state;
+    private ImageView official_city;
     private GoogleMap googleMap;
     private View mRoot;
 
@@ -86,25 +86,13 @@ public class OfficialsTopFragment extends Fragment implements OnMapReadyCallback
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
         mRoot = inflater.inflate(R.layout.fragment_officials, parent, false);
-//        final MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.map);
-//        mapFragment.getMapAsync(new OnMapReadyCallback() {
-//            @Override
-//            public void onMapReady(GoogleMap map) {
-//                googleMap = map;
-//            }
-//        });
         clickNationalOfficials();
         clickStateOfficials();
+        clickCityOfficials();
         return mRoot;
     }
 
-    @Override
-    public void onMapReady(GoogleMap googleMap) {
-        LatLng newyorkcity = new LatLng(40.7128, -74.0059);
-        googleMap.addMarker(new MarkerOptions().position(newyorkcity).title("Political"));
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(newyorkcity,11));
 
-    }
 
 
     private void clickNationalOfficials() {
@@ -125,6 +113,26 @@ public class OfficialsTopFragment extends Fragment implements OnMapReadyCallback
                 connectToStateOfficials();
             }
         });
+    }
+
+    private void clickCityOfficials(){
+        official_city = (ImageView) mRoot.findViewById(R.id.iv_officials_city);
+        official_city.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToCityOfficials();
+            }
+        });
+
+    }
+
+    private void goToCityOfficials(){
+        fragmentTransaction = fragmentManager.beginTransaction();
+        Bundle bundle = new Bundle();
+        OfficialsBottomFragment fragment = new OfficialsBottomFragment();
+        fragment.setArguments(bundle);
+        fragmentTransaction.replace(R.id.fragment_container_officials_bottom, new OfficialsCityFragment()).commit();
+
     }
 
 
