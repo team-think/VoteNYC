@@ -2,7 +2,7 @@
     <string name="app_name">Vote NYC</string>
     <string name="enter_location">Enter your location to find:</string>
     <string name="poll_place">Poll Sites</string>
-    <string name="elected_officials">Your Elected Officials</string>
+    <string name="elected_officials">Elected Officials</string>
     <string name="next_election">Next Election</string>
     <string name="country">Country</string>
     <string name="national">National</string>
