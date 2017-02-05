@@ -39,12 +39,12 @@ public class PollViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void bind(PollingLocation pollingLocation) {
-        pollName.setText("Name: " + pollingLocation.getAddress().getLocationName());
-        pollAddressLine1.setText("Address: " + pollingLocation.getAddress().getLine1());
-        pollCity.setText("City: " + pollingLocation.getAddress().getCity());
-        pollState.setText("State: " + pollingLocation.getAddress().getState());
-        pollZipCode.setText("ZIP: " + pollingLocation.getAddress().getZip());
-        pollNotes.setText("Notes:" + pollingLocation.getNotes());
+        pollName.setText(pollingLocation.getAddress().getLocationName());
+        pollAddressLine1.setText(pollingLocation.getAddress().getLine1());
+        pollCity.setText(pollingLocation.getAddress().getCity());
+        pollState.setText(pollingLocation.getAddress().getState());
+        pollZipCode.setText(pollingLocation.getAddress().getZip());
+        pollNotes.setText("Notes: " + pollingLocation.getNotes());
         pollHours.setText("Hours: " + pollingLocation.getPollingHours());
 
     }

@@ -12,6 +12,12 @@ import com.example.android.bigappsvotenyc.MainFragment;
 import com.example.android.bigappsvotenyc.PollingLocations.Internet.VoterInfoService;
 import com.example.android.bigappsvotenyc.PollingLocations.Model.VoterInfo;
 import com.example.android.bigappsvotenyc.R;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -23,7 +29,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by mathcore on 1/30/17.
  */
 
-public class PollLocationsActivity extends AppCompatActivity {
+public class PollLocationsActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     private static final String TAG = PollLocationsActivity.class.getSimpleName();
     private String key = "AIzaSyA1G4Wrf-G7pz3l-eXh6T6WPOoshE6aQQA";
@@ -38,6 +44,10 @@ public class PollLocationsActivity extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.rv_locations);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         downloadData();
+    }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
 
     }
 
@@ -72,4 +82,6 @@ public class PollLocationsActivity extends AppCompatActivity {
             }
         });
     }
+
+
 }

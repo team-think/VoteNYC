@@ -3,7 +3,13 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="325dp"
-    android:background="#CCCCCC">
+    >
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.MapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="250dp" />
 
     <!--<ImageView-->
         <!--android:id="@+id/iv_officials_county"-->
@@ -49,7 +55,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/iv_officials_national"
         android:layout_alignEnd="@+id/iv_officials_national"
-        android:layout_alignTop="@+id/tv_officials_state" />
+        android:layout_alignTop="@+id/tv_officials_state"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/tv_officials_state"
@@ -59,7 +66,8 @@
         android:clickable="true"
         android:layout_alignBaseline="@+id/tv_officials_city"
         android:layout_alignBottom="@+id/tv_officials_city"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"/>
 
     <ImageView
         android:id="@+id/iv_officials_state"
@@ -90,7 +98,8 @@
         android:layout_alignRight="@+id/iv_officials_city"
         android:layout_alignEnd="@+id/iv_officials_city"
         android:layout_marginRight="14dp"
-        android:layout_marginEnd="14dp" />
+        android:layout_marginEnd="14dp"
+        android:textStyle="bold"/>
 
     <ImageView
         android:id="@+id/iv_officials_national"

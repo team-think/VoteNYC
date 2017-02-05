@@ -14,8 +14,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:textSize="22sp"
-        android:textStyle="bold"
-        />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tv_rep_name"
@@ -25,8 +24,7 @@
         android:textStyle="bold"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@id/tv_office_position"
-        />
+        android:layout_below="@id/tv_office_position" />
 
 
     <TextView
@@ -56,21 +54,24 @@
         android:layout_alignParentStart="true" />
 
     <TextView
+        android:id="@+id/tv_rep_address_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_rep_address_line2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:paddingRight="3dp"/>
+
+    <TextView
         android:id="@+id/tv_rep_address_state"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/tv_rep_address_city"
         android:layout_alignBottom="@+id/tv_rep_address_city"
         android:layout_toRightOf="@+id/tv_rep_address_city"
-        android:layout_toEndOf="@+id/tv_rep_address_city" />
+        android:layout_toEndOf="@+id/tv_rep_address_city"
+        android:paddingRight="3dp"/>
 
-    <TextView
-        android:id="@+id/tv_rep_address_city"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_rep_address_line2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
 
     <TextView
         android:id="@+id/tv_rep_address_zip"
@@ -155,7 +156,9 @@
         android:layout_alignBaseline="@+id/tv_rep_channel3_type"
         android:layout_alignBottom="@+id/tv_rep_channel3_type"
         android:layout_toRightOf="@+id/tv_rep_channel3_type"
-        android:layout_toEndOf="@+id/tv_rep_channel3_type" />
+        android:layout_toEndOf="@+id/tv_rep_channel3_type"
+        android:layout_marginBottom="16dp"/>
+
 
 
 

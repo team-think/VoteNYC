@@ -24,7 +24,6 @@ public class PollAdapter extends RecyclerView.Adapter<PollViewHolder> {
 
     public PollAdapter(VoterInfo voterData) {
         this.pollLists = voterData.getPollingLocations();
-//        this.election = voterData.getElection();
     }
 
     @Override
@@ -41,7 +40,6 @@ public class PollAdapter extends RecyclerView.Adapter<PollViewHolder> {
     @Override
     public void onBindViewHolder(PollViewHolder holder, int position) {
         holder.bind(pollLists.get(position));
-//        holder.bind(election);
     }
 
     @Override

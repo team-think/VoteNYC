@@ -21,7 +21,7 @@
         <activity android:name=".ElectedOfficials.ElectedOfficialsActivity" />
         <activity android:name=".PollingLocations.PollLocationsActivity" />
         <activity android:name=".RecentBills.RecentBillsActivity" />
-        <activity android:name=".NextElection.NextElectionActivity" />
+        <activity android:name=".GoogleMaps.GoogleMapsActivity" />
 
         <meta-data
             android:name="com.google.android.gms.version"
