@@ -27,7 +27,6 @@ public class OfficialsBottomFragment extends Fragment {
     private static final String BASE_URL = "https://www.googleapis.com/civicinfo/v2/";
     private RecyclerView recyclerView;
     private RepOfficialAdapter officialAdapter;
-    private RepService service;
     private View mRoot;
     private List<Official> officialList;
 

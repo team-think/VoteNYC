@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="3dp"
+    android:background="#F0F8FF">
+
+
+    <TextView
+        android:id="@+id/tv_office_position_city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:text="@string/nyc_mayor"/>
+
+
+    <TextView
+        android:id="@+id/tv_rep_name_city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/tv_office_position_city"
+        android:text="@string/bill_de_blasio"/>
+
+
+    <TextView
+        android:id="@+id/tv_rep_party_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_rep_name_city"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#0000FF"
+        android:text="@string/democratic"/>
+
+    <TextView
+        android:id="@+id/tv_rep_address_line1_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_rep_party_city"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="@string/city_hall"/>
+
+    <TextView
+        android:id="@+id/tv_rep_address_line2_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_rep_address_line1_city"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/tv_rep_address_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_rep_address_line2_city"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:paddingRight="5dp"
+        android:text="New York"/>
+
+    <TextView
+        android:id="@+id/tv_rep_address_state_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tv_rep_address_city"
+        android:layout_alignBottom="@+id/tv_rep_address_city"
+        android:layout_toRightOf="@+id/tv_rep_address_city"
+        android:layout_toEndOf="@+id/tv_rep_address_city"
+        android:paddingRight="5dp"
+        android:text="NY"/>
+
+
+    <TextView
+        android:id="@+id/tv_rep_phones_city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_rep_address_city"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="Phone: (212) 639-9675"/>
+
+    <TextView
+        android:id="@+id/tv_rep_urls_city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_rep_phones_city"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="Website: http://www1.nyc.gov/office-of-the-mayor"/>
+
+    <TextView
+        android:id="@+id/tv_email_city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_rep_urls_city"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/tv_rep_channel1_type_city"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_email_city"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="Twitter"/>
+
+    <TextView
+        android:id="@+id/tv_rep_channel1_id_city"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tv_rep_channel1_type_city"
+        android:layout_alignBottom="@+id/tv_rep_channel1_type_city"
+        android:layout_toRightOf="@+id/tv_rep_channel1_type_city"
+        android:layout_toEndOf="@+id/tv_rep_channel1_type_city"
+        android:text="Id: BilldeBlasio"/>
+
+    <TextView
+        android:id="@+id/tv_rep_channel2_type_city"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_rep_channel1_type_city"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="Facebook"/>
+
+
+    <TextView
+        android:id="@+id/tv_rep_channel2_id"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tv_rep_channel2_type_city"
+        android:layout_alignBottom="@+id/tv_rep_channel2_type_city"
+        android:layout_toRightOf="@+id/tv_rep_channel2_type_city"
+        android:layout_toEndOf="@+id/tv_rep_channel2_type_city"
+        android:text="Id: NYCMayork"/>
+
+    <TextView
+        android:id="@+id/tv_rep_channel3_type_city"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_rep_channel2_type_city"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/tv_rep_channel3_id_city"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tv_rep_channel3_type_city"
+        android:layout_alignBottom="@+id/tv_rep_channel3_type_city"
+        android:layout_toRightOf="@+id/tv_rep_channel3_type_city"
+        android:layout_toEndOf="@+id/tv_rep_channel3_type_city"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/tv_rep_address_zip_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10007"
+        android:layout_alignBaseline="@+id/tv_rep_address_state_city"
+        android:layout_alignBottom="@+id/tv_rep_address_state_city"
+        android:layout_toRightOf="@+id/tv_rep_address_state_city"
+        android:layout_toEndOf="@+id/tv_rep_address_state_city" />
+
+</RelativeLayout>
