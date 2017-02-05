@@ -2,24 +2,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:layout_marginBottom="16dp"
     android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/bt_bills_senate"
+    <ImageView
+        android:id="@+id/iv_bills_senate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:paddingLeft="50dp"
-        android:paddingRight="50dp"
-        android:text="@string/senate"
+        android:src="@drawable/us_senate_icon"
         android:clickable="true"/>
 
-    <Button
-        android:id="@+id/bt_bills_house"
+    <ImageView
+        android:id="@+id/iv_bills_house"
         android:layout_weight="1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/house"
+        android:src="@drawable/us_house_icon"
         android:clickable="true"/>
 
 </LinearLayout>

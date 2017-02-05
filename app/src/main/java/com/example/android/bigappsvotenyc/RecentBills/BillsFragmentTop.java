@@ -41,8 +41,8 @@ public class BillsFragmentTop extends Fragment {
     private FragmentTransaction fragmentTransaction;
     private FragmentManager fragmentManager;
     private RecentBillsService service;
-    private Button bt_house_of_reps;
-    private Button bt_senate;
+    private ImageView iv_house_of_reps;
+    private ImageView iv_senate;
     private View mRoot;
 
 
@@ -62,8 +62,8 @@ public class BillsFragmentTop extends Fragment {
     }
 
     private void clickHouseOfReps() {
-        bt_house_of_reps = (Button) mRoot.findViewById(R.id.bt_bills_house);
-        bt_house_of_reps.setOnClickListener(new View.OnClickListener() {
+        iv_house_of_reps = (ImageView) mRoot.findViewById(R.id.iv_bills_house);
+        iv_house_of_reps.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 connectToHouse();
@@ -73,8 +73,8 @@ public class BillsFragmentTop extends Fragment {
     }
 
     private void clickSenate() {
-        bt_senate = (Button) mRoot.findViewById(R.id.bt_bills_senate);
-        bt_senate.setOnClickListener(new View.OnClickListener() {
+        iv_senate = (ImageView) mRoot.findViewById(R.id.iv_bills_senate);
+        iv_senate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 connectToSenate();
