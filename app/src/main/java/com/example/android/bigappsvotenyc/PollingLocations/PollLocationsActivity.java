@@ -1,6 +1,8 @@
 package com.example.android.bigappsvotenyc.PollingLocations;
 
 import android.content.Intent;
+import android.location.Address;
+import android.location.Geocoder;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +20,8 @@ import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -41,10 +45,15 @@ public class PollLocationsActivity extends AppCompatActivity implements OnMapRea
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location);
+        MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
         recyclerView = (RecyclerView) findViewById(R.id.rv_locations);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         downloadData();
     }
+
+
+
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
@@ -84,6 +93,7 @@ public class PollLocationsActivity extends AppCompatActivity implements OnMapRea
             }
         });
     }
+
 
 
 }
