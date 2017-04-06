@@ -21,6 +21,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.io.IOException;
 import java.util.List;
 
 import retrofit2.Call;
@@ -57,9 +58,9 @@ public class PollLocationsActivity extends AppCompatActivity implements OnMapRea
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        LatLng newyorkcity = new LatLng(40.7128, -74.0059);
-        googleMap.addMarker(new MarkerOptions().position(newyorkcity).title("Political"));
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(newyorkcity,11));
+        LatLng pollingPlace = getLocationFromAddress("682 Seneca Ave. 3R Ridgewood NY 11385");
+        googleMap.addMarker(new MarkerOptions().position(pollingPlace).title("Political"));
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(pollingPlace,11));
     }
 
     public void downloadData() {
@@ -76,6 +77,7 @@ public class PollLocationsActivity extends AppCompatActivity implements OnMapRea
         String city = intent.getStringExtra(MainFragment.EXTRA_MESSAGE2);
         String state = intent.getStringExtra(MainFragment.EXTRA_MESSAGE3);
         String zipcode = intent.getStringExtra(MainFragment.EXTRA_MESSAGE4);
+
 
         Call<VoterInfo> call = service.getData(address + city + state + zipcode, "2000", key);
 
@@ -94,6 +96,30 @@ public class PollLocationsActivity extends AppCompatActivity implements OnMapRea
         });
     }
 
+    public LatLng getLocationFromAddress(String strAddress){
+
+        Geocoder coder = new Geocoder(this);
+        List<Address> address;
+        LatLng p1 = null;
+
+        try {
+            address = coder.getFromLocationName(strAddress,5);
+            if (address==null) {
+                return null;
+            }
+            Address location=address.get(0);
+            location.getLatitude();
+            location.getLongitude();
+
+            p1 = new LatLng(location.getLatitude(), location.getLongitude());
+
+            return p1;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return p1;
+
+    }
 
 
 }
