@@ -12,6 +12,7 @@ import android.util.Log;
 
 import com.example.android.bigappsvotenyc.MainFragment;
 import com.example.android.bigappsvotenyc.PollingLocations.Internet.VoterInfoService;
+import com.example.android.bigappsvotenyc.PollingLocations.Model.PollingLocation;
 import com.example.android.bigappsvotenyc.PollingLocations.Model.VoterInfo;
 import com.example.android.bigappsvotenyc.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -40,7 +41,7 @@ public class PollLocationsActivity extends AppCompatActivity implements OnMapRea
     private String key = "AIzaSyA1G4Wrf-G7pz3l-eXh6T6WPOoshE6aQQA";
     private RecyclerView recyclerView;
     private PollAdapter adapter;
-
+    private String physicalAddress;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -58,10 +59,12 @@ public class PollLocationsActivity extends AppCompatActivity implements OnMapRea
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        LatLng pollingPlace = getLocationFromAddress("682 Seneca Ave. 3R Ridgewood NY 11385");
+        LatLng pollingPlace = getLocationFromAddress("");
         googleMap.addMarker(new MarkerOptions().position(pollingPlace).title("Political"));
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(pollingPlace,11));
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(pollingPlace,15));
     }
+
+
 
     public void downloadData() {
 
@@ -86,6 +89,8 @@ public class PollLocationsActivity extends AppCompatActivity implements OnMapRea
             public void onResponse(Call<VoterInfo> call, Response<VoterInfo> response) {
                 adapter = new PollAdapter(response.body());
                 recyclerView.setAdapter(adapter);
+
+
             }
 
             @Override
