@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="3dp"
+    android:layout_marginTop="1dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_election_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/tv_election_level"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_election_type" />
+
+    <TextView
+        android:id="@+id/tv_election_scope"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_election_level" />
+
+
+    <TextView
+        android:id="@+id/tv_election_position"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_election_scope"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/tv_election_district"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_election_position" />
+
+    <TextView
+        android:id="@+id/tv_candidate_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/tv_election_district"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_candidate_party"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tv_candidate_name"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_candidate_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tv_candidate_party" />
+
+    <TextView
+        android:id="@+id/tv_candidate_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tv_candidate_phone" />
+
+    <TextView
+        android:id="@+id/tv_candidate_url"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tv_candidate_email" />
+
+
+    <TextView
+        android:id="@+id/tv_candidate_channel1_type"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tv_candidate_url" />
+
+    <TextView
+        android:id="@+id/tv_candidate_channel1_id"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tv_candidate_channel1_type"
+        android:layout_alignBottom="@+id/tv_candidate_channel1_type"
+        android:layout_toEndOf="@+id/tv_candidate_channel1_type"
+        android:layout_toRightOf="@+id/tv_candidate_channel1_type" />
+
+    <TextView
+        android:id="@+id/tv_candidate_channel2_type"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tv_candidate_channel1_type" />
+
+
+    <TextView
+        android:id="@+id/tv_candidate_channel2_id"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tv_candidate_channel2_type"
+        android:layout_alignBottom="@+id/tv_candidate_channel2_type"
+        android:layout_toEndOf="@+id/tv_candidate_channel2_type"
+        android:layout_toRightOf="@+id/tv_candidate_channel2_type" />
+
+    <TextView
+        android:id="@+id/tv_candidate_channel3_type"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tv_candidate_channel2_type" />
+
+    <TextView
+        android:id="@+id/tv_candidate_channel3_id"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tv_candidate_channel3_type"
+        android:layout_alignBottom="@+id/tv_candidate_channel3_type"
+        android:layout_marginBottom="16dp"
+        android:layout_toEndOf="@+id/tv_candidate_channel3_type"
+        android:layout_toRightOf="@+id/tv_candidate_channel3_type" />
+
+
+</RelativeLayout>

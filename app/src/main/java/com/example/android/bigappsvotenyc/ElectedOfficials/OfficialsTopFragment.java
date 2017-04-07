@@ -19,11 +19,6 @@ import com.example.android.bigappsvotenyc.ElectedOfficials.model.RepResponse;
 import com.example.android.bigappsvotenyc.ElectedOfficials.service.RepService;
 import com.example.android.bigappsvotenyc.MainFragment;
 import com.example.android.bigappsvotenyc.R;
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -71,7 +66,6 @@ public class OfficialsTopFragment extends Fragment {
     private ImageView official_national;
     private ImageView official_state;
     private ImageView official_city;
-    private GoogleMap googleMap;
     private View mRoot;
 
 
@@ -91,8 +85,6 @@ public class OfficialsTopFragment extends Fragment {
         clickCityOfficials();
         return mRoot;
     }
-
-
 
 
     private void clickNationalOfficials() {
@@ -251,7 +243,6 @@ public class OfficialsTopFragment extends Fragment {
                 fragment.setArguments(bundle);
                 fragmentTransaction.replace(R.id.fragment_container_officials_bottom, fragment).commit();
             }
-
             @Override
             public void onFailure(Call<RepResponse> call, Throwable t) {
                 Log.d(TAG, "Error: " + t.getMessage());
