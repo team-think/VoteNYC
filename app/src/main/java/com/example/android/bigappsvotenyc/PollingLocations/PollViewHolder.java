@@ -22,6 +22,11 @@ public class PollViewHolder extends RecyclerView.ViewHolder {
     private TextView pollZipCode;
     private TextView pollNotes;
     private TextView pollHours;
+    private String addressLine1;
+    private String addressCity;
+    private String addressState;
+    private String addressZipCode;
+    private String addressTotal;
 
 
     public PollViewHolder(View itemView) {
@@ -51,5 +56,14 @@ public class PollViewHolder extends RecyclerView.ViewHolder {
 
     public void bind(Election election) {
         electionDay.setText("Next Election: " + election.getElectionDay());
+    }
+
+    public String physicalAddress(PollingLocation pollingLocation){
+        addressLine1 = pollingLocation.getAddress().getLine1();
+        addressCity = pollingLocation.getAddress().getCity();
+        addressState = pollingLocation.getAddress().getState();
+        addressZipCode = pollingLocation.getAddress().getZip();
+        addressTotal = addressLine1 + " " + addressCity + " " + addressState + " " + addressZipCode;
+        return addressTotal;
     }
 }
