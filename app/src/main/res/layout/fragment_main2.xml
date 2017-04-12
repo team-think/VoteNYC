@@ -109,6 +109,18 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/tv_enter_location"
+                android:gravity="center"
+                android:text="Enter Location"
+                android:autoLink="all"
+                android:linksClickable="true"
+                android:textColor="#00fff0"
+                android:textColorLink="#00fff0"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="P.S. 250"
                 android:textSize="18sp"/>

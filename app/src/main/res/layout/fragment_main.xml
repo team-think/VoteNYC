@@ -3,170 +3,170 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:background="#0F4DA0"/>
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="30dp"-->
+        <!--android:background="#0F4DA0"/>-->
 
-    <ImageView
-        android:id="@+id/iv_vote"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:src="@drawable/votenyc" />
+    <!--<ImageView-->
+        <!--android:id="@+id/iv_vote"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:src="@drawable/votenyc" />-->
 
-    <EditText
-        android:id="@+id/et_address"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/iv_vote"
-        android:layout_centerHorizontal="true"
-        android:width="250dp"
-        android:background="#FFF00F"
-        android:inputType="textCapCharacters"
-        android:hint="@string/edit_address" />
+    <!--<EditText-->
+        <!--android:id="@+id/et_address"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/iv_vote"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:width="250dp"-->
+        <!--android:background="#FFF00F"-->
+        <!--android:inputType="textCapCharacters"-->
+        <!--android:hint="@string/edit_address" />-->
 
-    <EditText
-        android:id="@+id/et_city"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/et_address"
-        android:layout_alignStart="@+id/et_address"
-        android:layout_below="@+id/et_address"
-        android:layout_marginTop="10dp"
-        android:width="250dp"
-        android:background="#FFF00F"
-        android:inputType="textCapCharacters"
-        android:hint="@string/edit_city" />
+    <!--<EditText-->
+        <!--android:id="@+id/et_city"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignLeft="@+id/et_address"-->
+        <!--android:layout_alignStart="@+id/et_address"-->
+        <!--android:layout_below="@+id/et_address"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:width="250dp"-->
+        <!--android:background="#FFF00F"-->
+        <!--android:inputType="textCapCharacters"-->
+        <!--android:hint="@string/edit_city" />-->
 
-    <EditText
-        android:id="@+id/et_state"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/et_city"
-        android:layout_alignStart="@+id/et_city"
-        android:layout_below="@+id/et_city"
-        android:layout_marginTop="12dp"
-        android:width="250dp"
-        android:background="#FFF00F"
-        android:inputType="textCapCharacters"
-        android:hint="@string/edit_state" />
+    <!--<EditText-->
+        <!--android:id="@+id/et_state"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignLeft="@+id/et_city"-->
+        <!--android:layout_alignStart="@+id/et_city"-->
+        <!--android:layout_below="@+id/et_city"-->
+        <!--android:layout_marginTop="12dp"-->
+        <!--android:width="250dp"-->
+        <!--android:background="#FFF00F"-->
+        <!--android:inputType="textCapCharacters"-->
+        <!--android:hint="@string/edit_state" />-->
 
-    <EditText
-        android:id="@+id/et_zip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/et_state"
-        android:layout_alignStart="@+id/et_state"
-        android:layout_below="@+id/et_state"
-        android:layout_marginTop="15dp"
-        android:width="250dp"
-        android:inputType="number"
-        android:background="#FFF00F"
-        android:hint="@string/edit_zip" />
+    <!--<EditText-->
+        <!--android:id="@+id/et_zip"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignLeft="@+id/et_state"-->
+        <!--android:layout_alignStart="@+id/et_state"-->
+        <!--android:layout_below="@+id/et_state"-->
+        <!--android:layout_marginTop="15dp"-->
+        <!--android:width="250dp"-->
+        <!--android:inputType="number"-->
+        <!--android:background="#FFF00F"-->
+        <!--android:hint="@string/edit_zip" />-->
 
 
-    <TextView
-        android:id="@+id/tv_location_pin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:textColor="#000000"
-        android:layout_marginLeft="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_alignBaseline="@+id/tv_officials"
-        android:layout_alignBottom="@+id/tv_officials"
-        android:layout_alignEnd="@+id/iv_location_pin"
-        android:layout_alignRight="@+id/iv_location_pin"
-        android:text="@string/poll_place" />
+    <!--<TextView-->
+        <!--android:id="@+id/tv_location_pin"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textStyle="bold"-->
+        <!--android:textColor="#000000"-->
+        <!--android:layout_marginLeft="10dp"-->
+        <!--android:layout_marginStart="10dp"-->
+        <!--android:layout_alignBaseline="@+id/tv_officials"-->
+        <!--android:layout_alignBottom="@+id/tv_officials"-->
+        <!--android:layout_alignEnd="@+id/iv_location_pin"-->
+        <!--android:layout_alignRight="@+id/iv_location_pin"-->
+        <!--android:text="@string/poll_place" />-->
 
-    <ImageView
-        android:id="@+id/iv_ballot"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ballot_box"
-        android:layout_alignTop="@+id/iv_officials"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="18dp"
-        android:layout_marginEnd="18dp" />
+    <!--<ImageView-->
+        <!--android:id="@+id/iv_ballot"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:src="@drawable/ballot_box"-->
+        <!--android:layout_alignTop="@+id/iv_officials"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_alignParentEnd="true"-->
+        <!--android:layout_marginRight="18dp"-->
+        <!--android:layout_marginEnd="18dp" />-->
 
-    <ImageView
-        android:id="@+id/iv_location_pin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="53dp"
-        android:clickable="true"
-        android:src="@drawable/location_pin2"
-        android:layout_below="@+id/et_zip"
-        android:layout_toLeftOf="@+id/et_zip"
-        android:layout_toStartOf="@+id/et_zip" />
+    <!--<ImageView-->
+        <!--android:id="@+id/iv_location_pin"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="53dp"-->
+        <!--android:clickable="true"-->
+        <!--android:src="@drawable/location_pin2"-->
+        <!--android:layout_below="@+id/et_zip"-->
+        <!--android:layout_toLeftOf="@+id/et_zip"-->
+        <!--android:layout_toStartOf="@+id/et_zip" />-->
 
-    <TextView
-        android:id="@+id/tv_nextelection"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/next_election"
-        android:textColor="#000000"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/iv_ballot"
-        android:layout_alignStart="@+id/iv_ballot"
-        android:layout_below="@+id/iv_ballot"
-        android:textStyle="bold"/>
+    <!--<TextView-->
+        <!--android:id="@+id/tv_nextelection"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/next_election"-->
+        <!--android:textColor="#000000"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_alignLeft="@+id/iv_ballot"-->
+        <!--android:layout_alignStart="@+id/iv_ballot"-->
+        <!--android:layout_below="@+id/iv_ballot"-->
+        <!--android:textStyle="bold"/>-->
 
-    <ImageView
-        android:id="@+id/iv_officials"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:src="@drawable/elected_official"
-        android:layout_alignBottom="@+id/iv_location_pin"
-        android:layout_toRightOf="@+id/tv_location_pin"
-        android:layout_toEndOf="@+id/tv_location_pin"
-        android:layout_marginLeft="20dp"
-        android:layout_marginStart="20dp" />
+    <!--<ImageView-->
+        <!--android:id="@+id/iv_officials"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:clickable="true"-->
+        <!--android:src="@drawable/elected_official"-->
+        <!--android:layout_alignBottom="@+id/iv_location_pin"-->
+        <!--android:layout_toRightOf="@+id/tv_location_pin"-->
+        <!--android:layout_toEndOf="@+id/tv_location_pin"-->
+        <!--android:layout_marginLeft="20dp"-->
+        <!--android:layout_marginStart="20dp" />-->
 
-    <TextView
-        android:id="@+id/tv_officials"
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:text="@string/elected_officials"
-        android:textColor="#000000"
-        android:layout_marginLeft="15dp"
-        android:layout_marginStart="15dp"
-        android:textStyle="bold"
-        android:layout_alignBaseline="@+id/tv_nextelection"
-        android:layout_alignBottom="@+id/tv_nextelection"
-        android:layout_alignLeft="@+id/iv_officials"
-        android:layout_alignStart="@+id/iv_officials" />
+    <!--<TextView-->
+        <!--android:id="@+id/tv_officials"-->
+        <!--android:layout_width="60dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:clickable="true"-->
+        <!--android:text="@string/elected_officials"-->
+        <!--android:textColor="#000000"-->
+        <!--android:layout_marginLeft="15dp"-->
+        <!--android:layout_marginStart="15dp"-->
+        <!--android:textStyle="bold"-->
+        <!--android:layout_alignBaseline="@+id/tv_nextelection"-->
+        <!--android:layout_alignBottom="@+id/tv_nextelection"-->
+        <!--android:layout_alignLeft="@+id/iv_officials"-->
+        <!--android:layout_alignStart="@+id/iv_officials" />-->
 
-    <ImageView
-        android:id="@+id/iv_bill"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:src="@drawable/bill_icon"
-        android:layout_marginRight="31dp"
-        android:layout_marginEnd="31dp"
-        android:layout_alignTop="@+id/iv_location_pin"
-        android:layout_toLeftOf="@+id/iv_ballot"
-        android:layout_toStartOf="@+id/iv_ballot" />
+    <!--<ImageView-->
+        <!--android:id="@+id/iv_bill"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:clickable="true"-->
+        <!--android:src="@drawable/bill_icon"-->
+        <!--android:layout_marginRight="31dp"-->
+        <!--android:layout_marginEnd="31dp"-->
+        <!--android:layout_alignTop="@+id/iv_location_pin"-->
+        <!--android:layout_toLeftOf="@+id/iv_ballot"-->
+        <!--android:layout_toStartOf="@+id/iv_ballot" />-->
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/recent_bills"
-        android:textStyle="bold"
-        android:textColor="#000000"
-        android:layout_marginLeft="15dp"
-        android:layout_marginStart="15dp"
-        android:layout_alignBaseline="@+id/tv_nextelection"
-        android:layout_alignBottom="@+id/tv_nextelection"
-        android:layout_alignRight="@+id/iv_bill"
-        android:layout_alignEnd="@+id/iv_bill" />
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/recent_bills"-->
+        <!--android:textStyle="bold"-->
+        <!--android:textColor="#000000"-->
+        <!--android:layout_marginLeft="15dp"-->
+        <!--android:layout_marginStart="15dp"-->
+        <!--android:layout_alignBaseline="@+id/tv_nextelection"-->
+        <!--android:layout_alignBottom="@+id/tv_nextelection"-->
+        <!--android:layout_alignRight="@+id/iv_bill"-->
+        <!--android:layout_alignEnd="@+id/iv_bill" />-->
 
 
 </RelativeLayout>
