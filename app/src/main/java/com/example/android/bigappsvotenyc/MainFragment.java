@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 
 /**
@@ -22,9 +23,11 @@ public class MainFragment extends Fragment {
     public static final String EXTRA_MESSAGE3 = "com.example.android.bigappsvotenyc";
     public static final String EXTRA_MESSAGE4 = "com.example.android.bigappsvotenyc";
 
+    private EnterAddressDialogFragment addressFragment;
+
     private ImageView getOfficials;
     private ImageView getElections;
-    private ImageView getLocations;
+    private TextView getLocations;
     private ImageView getRecentBills;
     private View mRoot;
     public EditText etAddress;
@@ -42,7 +45,7 @@ public class MainFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup parent, @Nullable Bundle savedInstanceState) {
         mRoot = inflater.inflate(R.layout.fragment_main2, parent, false);
-//        clickPollButton();
+        clickPollButton();
 //        clickOfficialsButton();
 //        clickBills();
 //        clickElectionsButton();
@@ -50,15 +53,24 @@ public class MainFragment extends Fragment {
     }
 
 
-//    private void clickPollButton() {
-//        getLocations = (ImageView) mRoot.findViewById(R.id.iv_location_pin);
-//        getLocations.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                gotoPollLocations();
-//            }
-//        });
-//    }
+    private void clickPollButton() {
+        getLocations = (TextView) mRoot.findViewById(R.id.tv_enter_location);
+        getLocations.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                addressDialogFrag("address");
+
+            }
+        });
+    }
+
+    private void addressDialogFrag(String address) {
+        android.app.FragmentTransaction ft = getFragmentManager().beginTransaction();
+        addressFragment = EnterAddressDialogFragment.newInstance(address);
+        addressFragment.show(ft, "Enter Home Address");
+    }
+
+
 //
 //    private void gotoPollLocations() {
 //        Intent intent = new Intent(getActivity(), PollLocationsActivity.class);
