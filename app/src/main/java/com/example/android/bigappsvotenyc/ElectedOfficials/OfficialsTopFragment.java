@@ -19,11 +19,6 @@ import com.example.android.bigappsvotenyc.ElectedOfficials.model.RepResponse;
 import com.example.android.bigappsvotenyc.ElectedOfficials.service.RepService;
 import com.example.android.bigappsvotenyc.MainFragment;
 import com.example.android.bigappsvotenyc.R;
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -71,7 +66,6 @@ public class OfficialsTopFragment extends Fragment {
     private ImageView official_national;
     private ImageView official_state;
     private ImageView official_city;
-    private GoogleMap googleMap;
     private View mRoot;
 
 
@@ -93,10 +87,8 @@ public class OfficialsTopFragment extends Fragment {
     }
 
 
-
-
     private void clickNationalOfficials() {
-        official_national = (ImageView) mRoot.findViewById(R.id.iv_officials_national);
+//        official_national = (ImageView) mRoot.findViewById(R.id.iv_officials_national);
         official_national.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -106,7 +98,7 @@ public class OfficialsTopFragment extends Fragment {
     }
 
     private void clickStateOfficials(){
-        official_state = (ImageView) mRoot.findViewById(R.id.iv_officials_state);
+//        official_state = (ImageView) mRoot.findViewById(R.id.iv_officials_state);
         official_state.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -116,7 +108,7 @@ public class OfficialsTopFragment extends Fragment {
     }
 
     private void clickCityOfficials(){
-        official_city = (ImageView) mRoot.findViewById(R.id.iv_officials_city);
+//        official_city = (ImageView) mRoot.findViewById(R.id.iv_officials_city);
         official_city.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -251,7 +243,6 @@ public class OfficialsTopFragment extends Fragment {
                 fragment.setArguments(bundle);
                 fragmentTransaction.replace(R.id.fragment_container_officials_bottom, fragment).commit();
             }
-
             @Override
             public void onFailure(Call<RepResponse> call, Throwable t) {
                 Log.d(TAG, "Error: " + t.getMessage());

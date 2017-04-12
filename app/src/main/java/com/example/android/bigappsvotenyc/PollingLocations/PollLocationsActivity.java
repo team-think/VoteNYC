@@ -12,6 +12,7 @@ import android.util.Log;
 
 import com.example.android.bigappsvotenyc.MainFragment;
 import com.example.android.bigappsvotenyc.PollingLocations.Internet.VoterInfoService;
+import com.example.android.bigappsvotenyc.PollingLocations.Model.PollingLocation;
 import com.example.android.bigappsvotenyc.PollingLocations.Model.VoterInfo;
 import com.example.android.bigappsvotenyc.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -21,6 +22,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.io.IOException;
 import java.util.List;
 
 import retrofit2.Call;
@@ -39,7 +41,7 @@ public class PollLocationsActivity extends AppCompatActivity implements OnMapRea
     private String key = "AIzaSyA1G4Wrf-G7pz3l-eXh6T6WPOoshE6aQQA";
     private RecyclerView recyclerView;
     private PollAdapter adapter;
-
+    private String physicalAddress;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -57,10 +59,12 @@ public class PollLocationsActivity extends AppCompatActivity implements OnMapRea
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        LatLng newyorkcity = new LatLng(40.7128, -74.0059);
-        googleMap.addMarker(new MarkerOptions().position(newyorkcity).title("Political"));
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(newyorkcity,11));
+        LatLng pollingPlace = getLocationFromAddress("");
+        googleMap.addMarker(new MarkerOptions().position(pollingPlace).title("Political"));
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(pollingPlace,15));
     }
+
+
 
     public void downloadData() {
 
@@ -77,6 +81,7 @@ public class PollLocationsActivity extends AppCompatActivity implements OnMapRea
         String state = intent.getStringExtra(MainFragment.EXTRA_MESSAGE3);
         String zipcode = intent.getStringExtra(MainFragment.EXTRA_MESSAGE4);
 
+
         Call<VoterInfo> call = service.getData(address + city + state + zipcode, "2000", key);
 
         call.enqueue(new Callback<VoterInfo>() {
@@ -84,6 +89,8 @@ public class PollLocationsActivity extends AppCompatActivity implements OnMapRea
             public void onResponse(Call<VoterInfo> call, Response<VoterInfo> response) {
                 adapter = new PollAdapter(response.body());
                 recyclerView.setAdapter(adapter);
+
+
             }
 
             @Override
@@ -94,6 +101,30 @@ public class PollLocationsActivity extends AppCompatActivity implements OnMapRea
         });
     }
 
+    public LatLng getLocationFromAddress(String strAddress){
+
+        Geocoder coder = new Geocoder(this);
+        List<Address> address;
+        LatLng p1 = null;
+
+        try {
+            address = coder.getFromLocationName(strAddress,5);
+            if (address==null) {
+                return null;
+            }
+            Address location=address.get(0);
+            location.getLatitude();
+            location.getLongitude();
+
+            p1 = new LatLng(location.getLatitude(), location.getLongitude());
+
+            return p1;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return p1;
+
+    }
 
 
 }
