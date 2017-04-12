@@ -88,7 +88,7 @@ public class OfficialsTopFragment extends Fragment {
 
 
     private void clickNationalOfficials() {
-        official_national = (ImageView) mRoot.findViewById(R.id.iv_officials_national);
+//        official_national = (ImageView) mRoot.findViewById(R.id.iv_officials_national);
         official_national.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -98,7 +98,7 @@ public class OfficialsTopFragment extends Fragment {
     }
 
     private void clickStateOfficials(){
-        official_state = (ImageView) mRoot.findViewById(R.id.iv_officials_state);
+//        official_state = (ImageView) mRoot.findViewById(R.id.iv_officials_state);
         official_state.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -108,7 +108,7 @@ public class OfficialsTopFragment extends Fragment {
     }
 
     private void clickCityOfficials(){
-        official_city = (ImageView) mRoot.findViewById(R.id.iv_officials_city);
+//        official_city = (ImageView) mRoot.findViewById(R.id.iv_officials_city);
         official_city.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

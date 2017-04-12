@@ -1,118 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
+    android:background="#ff000f"
     android:layout_width="match_parent"
-    android:layout_height="325dp"
-    >
+    android:layout_height="match_parent">
 
-    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/map"
-        android:name="com.google.android.gms.maps.MapFragment"
-        android:layout_width="match_parent"
-        android:layout_height="250dp" />
-
-    <!--<ImageView-->
-        <!--android:id="@+id/iv_officials_county"-->
-        <!--android:src="@drawable/location_pin_small"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignTop="@+id/iv_officials_city"-->
-        <!--android:layout_centerHorizontal="true" />-->
-
-    <!--<TextView-->
-        <!--android:id="@+id/tv_officials_county"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="@string/county"-->
-        <!--android:layout_below="@+id/iv_officials_county"-->
-        <!--android:layout_alignLeft="@+id/iv_officials_county"-->
-        <!--android:layout_alignStart="@+id/iv_officials_county" />-->
-
-
-    <!--<ImageView-->
-        <!--android:id="@+id/iv_officials_local"-->
-        <!--android:src="@drawable/location_pin_small"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginTop="220dp"-->
-        <!--android:layout_alignParentRight="true"-->
-        <!--android:clickable="true"/>-->
-
-    <!--<TextView-->
-        <!--android:id="@+id/tv_officials_local"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="@string/local"-->
-        <!--android:layout_below="@+id/iv_officials_local"-->
-        <!--android:layout_alignLeft="@+id/iv_officials_local"-->
-        <!--/>-->
-
-    <TextView
-        android:id="@+id/tv_officials_national"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/national"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/iv_officials_national"
-        android:layout_alignEnd="@+id/iv_officials_national"
-        android:layout_alignTop="@+id/tv_officials_state"
-        android:textStyle="bold"/>
-
-    <TextView
-        android:id="@+id/tv_officials_state"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/state"
-        android:clickable="true"
-        android:layout_alignBaseline="@+id/tv_officials_city"
-        android:layout_alignBottom="@+id/tv_officials_city"
-        android:layout_centerHorizontal="true"
-        android:textStyle="bold"/>
-
-    <ImageView
-        android:id="@+id/iv_officials_state"
-        android:src="@drawable/location_pin_small"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/tv_officials_state"
-        android:layout_centerHorizontal="true" />
-
-    <ImageView
-        android:id="@+id/iv_officials_city"
-        android:src="@drawable/location_pin_small"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="48dp"
-        android:layout_marginEnd="48dp"
-        android:clickable="true"
-        android:layout_alignTop="@+id/iv_officials_national"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <TextView
-        android:id="@+id/tv_officials_city"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/city"
-        android:layout_below="@+id/iv_officials_city"
-        android:layout_alignRight="@+id/iv_officials_city"
-        android:layout_alignEnd="@+id/iv_officials_city"
-        android:layout_marginRight="14dp"
-        android:layout_marginEnd="14dp"
-        android:textStyle="bold"/>
-
-    <ImageView
-        android:id="@+id/iv_officials_national"
-        android:src="@drawable/location_pin_small"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:clickable="true"
-        android:layout_marginBottom="32dp"
-        android:layout_marginLeft="55dp"
-        android:layout_marginStart="55dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+   <TextView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:gravity="center"
+       android:text="OFFICIALS FRAGMENT"/>
 
 
 </RelativeLayout>
