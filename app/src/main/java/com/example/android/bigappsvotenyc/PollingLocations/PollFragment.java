@@ -1,9 +1,13 @@
 package com.example.android.bigappsvotenyc.PollingLocations;
 
+import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,6 +20,7 @@ import com.example.android.bigappsvotenyc.PollingLocations.Model.VoterInfo;
 import com.example.android.bigappsvotenyc.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -36,6 +41,7 @@ public class PollFragment extends Fragment implements OnMapReadyCallback{
     private String key = "AIzaSyA1G4Wrf-G7pz3l-eXh6T6WPOoshE6aQQA";
     private RecyclerView recyclerView;
     private View mRoot;
+    private MapFragment mapFragment;
     private PollAdapter adapter;
 
     @Override
@@ -43,15 +49,28 @@ public class PollFragment extends Fragment implements OnMapReadyCallback{
         super.onCreate(savedInstanceState);
     }
 
+    @SuppressLint("NewApi")
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup parent, Bundle savedInstanceState) {
         mRoot = inflater.inflate(R.layout.fragment_poll, parent, false);
+        mapFragment = new MapFragment();
+        getChildFragmentManager()
+                .beginTransaction()
+                .replace(R.id.container_map, mapFragment)
+                .commit();
+        mapFragment.getMapAsync(this);
         return mRoot;
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
+        if (ActivityCompat.checkSelfPermission(getActivity().getApplicationContext(),
+                Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                && ActivityCompat.checkSelfPermission(getActivity().getApplicationContext(),
+                Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
         LatLng newyorkcity = new LatLng(40.7128, -74.0059);
         googleMap.addMarker(new MarkerOptions().position(newyorkcity).title("Political"));
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(newyorkcity,11));
