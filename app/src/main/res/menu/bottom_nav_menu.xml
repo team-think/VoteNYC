@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/action_sites"
+        android:id="@+id/action_home"
         android:enabled="true"
-        android:icon="@drawable/ic_location_on_black_24dp"
-        android:title="Polls" />
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="Home" />
 
     <item
         android:id="@+id/action_officials"
