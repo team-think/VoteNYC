@@ -10,6 +10,7 @@ import android.widget.EditText;
 
 import com.example.android.bigappsvotenyc.ElectedOfficials.OfficialsFragment;
 import com.example.android.bigappsvotenyc.NextElection.NextElectionTopFragment;
+import com.example.android.bigappsvotenyc.PollingLocations.PollFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -50,14 +51,14 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.action_home:
                         setHomeFragment();
                         break;
+                    case R.id.action_poll:
+                        setPollFragment();
+                        break;
                     case R.id.action_officials:
                         setOfficialsFragment();
                         break;
                     case R.id.action_elections:
                         setElectionsFragment();
-                        break;
-                    case R.id.action_profile:
-                        setProfileFragment();
                         break;
                 }
                 return true;
@@ -92,6 +93,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void setProfileFragment() {
+    private void setPollFragment() {
+        getFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_container, new PollFragment())
+                .addToBackStack(null)
+                .commit();
     }
 }
