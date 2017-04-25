@@ -43,7 +43,6 @@ public class EnterAddressDialogFragment extends DialogFragment {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         dialog = super.onCreateDialog(savedInstanceState);
-        // request a window without the title
         dialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         dialog.setCanceledOnTouchOutside(false);
         dialog.setCancelable(false);
